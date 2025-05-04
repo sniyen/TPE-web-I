@@ -1,6 +1,53 @@
-#navbar-main-light{
-    background-color: #C68EFD;
+/* HEADER */
+#page-header{
 }
-#navbar-main-dark{
+
+#navbar-main ul{
+    justify-content: space-evenly;
+}
+
+#navbar-topics ul{
+    justify-content: space-between;
+}
+
+#navbar-main ul , #navbar-topics ul {
+    display:flex;
+    flex-direction: row;
+    align-items: center; 
+    list-style: none; /*le saca los puntitos*/
+}
+a {
+    text-decoration: none;
+}
+.navbar-main-light{ /*PREGUNTAR*/
+    background-color: #C68EFD;
+    color: #5C1476;
+}
+.navbar-main-dark{
     background-color: #7B1A9E;
+    color: white;
+}
+.navbar-topics-light {
+    background-color: #E9A5F1;
+    color: #5C1476;
+}
+.navbar-topics-dark {
+    background-color: #A952CB;
+}
+/* MAIN */
+.page-main-light{
+    background-color: #FFD6F5;
+}
+
+.page-main-dark{
+    background-color: #58206D;
+}
+
+/* FOOTER */
+.page-footer-dark{
+    background-color: #7B1A9E;
+}
+
+.page-footer-light{
+    background-color: #C68EFD;
 }
