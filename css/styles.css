@@ -3,17 +3,29 @@
 }
 
 #navbar-main ul{
-    justify-content: space-evenly;
+
 }
 
 #navbar-topics ul{
     justify-content: space-between;
 }
 
-#navbar-main ul , #navbar-topics ul {
-    display:flex;
+#navbar-main ul {
+    display: flex;
     flex-direction: row;
-    align-items: center; 
+    justify-content: space-evenly;
+    background-color: #C68EFD;
+}
+
+.oscuro #navbar-main ul {
+ background-color: #7B1A9E;
+}
+
+#navbar-topics ul {
+    display:flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
     list-style: none; /*le saca los puntitos*/
 }
 a {
