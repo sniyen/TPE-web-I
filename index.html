@@ -5,15 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Tu amiga fiel de Ingeniería de Sistemas y TUDAI"/>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/index.css">
     <title>ExaWiki</title>
 </head>
-<body class="oscuro claro">
+<body id="fondo"> <!--aca añadimos dinamicamente las clases claro oscuro con javascript-->
     <header id="page-header">
         <nav id="navbar-main">
             <ul>
                 <li><a href="index.html"><img src=""></a></li>
                 <li><a href="index.html">EXAWIKI</a></li>
-                <li><input type="checkbox" alt="switch-light-dark"></li>
+                <li><input id="switch-light-dark" type="checkbox" alt="switch-light-dark"></li>
             </ul>
         </nav>
         <nav id="navbar-topics">
@@ -40,11 +41,10 @@
         <section id="card-container">
             <article class="card">
                 <header><h3>Introducción a la Programación 1</h3></header>
-                <div id="card-body">
+                <div class="card-content">
                     <p>Descripción</p>
-                    <ul id="subject-content">
+                    <ul class="subject-content">
                         <li>Programación Estructurada</li>
-                        <li>Pilas</li>
                         <li>Filas</li>
                         <li>Variables</li>
                         <li>Procedimientos</li>
@@ -58,13 +58,12 @@
             </article>
             <article class="card">
                 <header><h3>Web 1</h3></header>
-                <div id="card-body">
+                <div class="card-content">
                     <p>Descripción</p>
-                    <ul id="subject-content">
+                    <ul class="subject-content">
                         <li>Arquitectura Cliente-Servidor</li>
                         <li>HTML semántico</li>
                         <li>Diseño Responsive</li>
-                        <li>Selectores CSS</li>
                         <li>AJAX</li>
                         <li>JavaScript</li>
                         <li>JSON</li>

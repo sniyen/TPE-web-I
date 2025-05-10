@@ -4,45 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ExaWiki</title>
+    <link rel="stylesheet" href="../css/consultanos.css">
+    <link rel="stylesheet" href="../css/styles.css">
+ 
 </head>
-<body>
-    <header>
+<body id="fondo">
+    <header id="page-header">
         <nav id="navbar-main">
             <ul>
-                <li><a href="index.html"><img src=""></a></li>
-                <li><a href="index.html">EXAWIKI</a></li>
-                <li><input type="checkbox" alt="switch-claro-oscuro"></li>
+                <li><a href="../index.html"><img src=""></a></li>
+                <li><a href="../index.html">EXAWIKI</a></li>
+                <li><input id="switch-light-dark" type="checkbox" alt="switch-light-dark"></li>
             </ul>
         </nav>
         <nav id="navbar-topics">
             <ul>
-                <li><a href="index.html">MATERIAS</a></li>
-                <li><a href="sites/consultanos.html">CONSULTANOS</a></li>
-                <li><a href="sites/sobre_nosotras.html">SOBRE NOSOTRAS</a></li>
+                <li><a href="../index.html">MATERIAS</a></li>
+                <li><a href="consultanos.html">CONSULTANOS</a></li>
+                <li><a href="sobre_nosotras.html">SOBRE NOSOTRAS</a></li>
             </ul>  
         </nav>
     </header>
-    <main>
+    <main id="page-main">
         <h2>Consultanos</h2>
         <section>
-            <form>
+            <form id="formulario">
                 <label for="user-name">Nombre</label>
                 <input id="user-name" type="text">
                 <label for="question-topic">Asunto</label>
                 <input id="question-topic" type="text">
-                <label for="user-email">Email</label>
+                <label for="user-email" >Email</label>
                 <input id="user-email" type="email">
                 <label for="user-question">Mensaje</label>
-                <textarea id="user-question" cols="30" rows="20"></textarea>
-                <div id="captcha">
-                    
+                <textarea id="user-question" cols="43" rows="30"></textarea>
+                <div id="captcha-container">
+                    <h5>Complete el captcha para enviar el mensaje.</h5>
+                    <p id="captcha"></p>
+                    <input type="text" id="user-reply">
+                    <p id="captcha-inform" class="captcha-result"></p>
                 </div>
-                <button type="submit">Enviar</button>
+                <button id="submit-button" type="submit">Enviar</button>
             </form>
         </section>
     </main>
-    <footer>
-        <a href="https://www.linkedin.com/in/julieta-watts/">
+    <footer id="page-footer">
+        <a href="https://www.linkedin.com/in/julieta-watts">
             <figure>
                 <img src="" alt="icono-linkedIn">
                 <figcaption>LinkedIn Sofía</figcaption>
@@ -55,6 +61,7 @@
             </figure>
         </a>
     </footer>
-    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript" src="../js/consultanos.js"></script>
 </body>
 </html>

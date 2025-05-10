@@ -1,13 +1,7 @@
-/* HEADER */
-#page-header{
-}
 
-#navbar-main ul{
+#fondo {
+    margin: 0;
 
-}
-
-#navbar-topics ul{
-    justify-content: space-between;
 }
 
 #navbar-main ul {
@@ -15,10 +9,8 @@
     flex-direction: row;
     justify-content: space-evenly;
     background-color: #C68EFD;
-}
-
-.oscuro #navbar-main ul {
- background-color: #7B1A9E;
+    margin:0;
+    list-style: none;
 }
 
 #navbar-topics ul {
@@ -27,39 +19,71 @@
     justify-content: left;
     align-items: left;
     list-style: none; /*le saca los puntitos*/
+    justify-content: space-between;
+    margin:0;
+
 }
-a {
-    text-decoration: none;
-}
-.navbar-main-light{ /*PREGUNTAR*/
-    background-color: #C68EFD;
-    color: #5C1476;
-}
-.navbar-main-dark{
+
+.oscuro #navbar-main ul, .oscuro #page-footer {
     background-color: #7B1A9E;
     color: white;
 }
-.navbar-topics-light {
+
+.claro #navbar-main ul, .claro #page-footer {
+    background-color: #C68EFD;
+    color: #5C1476;
+}
+
+.claro #navbar-topics {
     background-color: #E9A5F1;
     color: #5C1476;
 }
-.navbar-topics-dark {
+.oscuro #navbar-topics {
     background-color: #A952CB;
 }
+
 /* MAIN */
-.page-main-light{
+h1, h2, h3, h4, h5, h6{
+    margin-top: 0;
+}
+
+.claro #page-main {
     background-color: #FFD6F5;
-}
+    color: #7B1A9E;
 
-.page-main-dark{
+}
+.oscuro #page-main {
     background-color: #58206D;
+    color: white;
 }
 
-/* FOOTER */
-.page-footer-dark{
-    background-color: #7B1A9E;
+a {
+    text-decoration: none; /*le borro el underline*/
 }
 
-.page-footer-light{
-    background-color: #C68EFD;
+.claro a {
+    color:#7B1A9E;
 }
+
+.oscuro a {
+    color: white;
+}
+
+/*FOOTER*/
+#page-footer figure{
+    margin: 0;
+}
+
+#page-footer {
+    bottom: 0;
+    position: sticky;
+    width: 100%;
+}
+
+#page-footer img, #page-footer figure, #page-footer figcaption, #page-footer a { /*ayudaaaaa*/
+    margin: 0;
+    padding: 0;
+}
+
+
+

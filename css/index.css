@@ -1,0 +1,39 @@
+#card-container {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 2%;
+}
+
+
+
+.subject-content {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: auto auto;
+    list-style: none;
+    box-sizing: border-box;
+}
+.subject-content li {
+    border: 1px solid #FFD6F5;
+    background-color: #FFD6F5;
+    border-radius: 5px;
+    margin: 5px;
+    box-sizing: border-box;
+    text-wrap: wrap;
+}
+.card {
+    margin: 5%;
+    border: 5px solid black;
+}
+
+
+@media (width >= 768px) { /*Si cumple la condicion esta en compu*/
+    #card-container {
+        flex-direction: row;
+        justify-content: center;
+    }
+    .card {
+        margin: 20px;
+    }
+}
