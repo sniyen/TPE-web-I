@@ -51,17 +51,87 @@
         <section>
             <article id="structured-programming" class="subject-item">
                 <h3>Programación Estructurada</h3>
+                <p>La programación estructurada comprende al programa bajo la perspectiva del paradigma imperativo: entiende al programa como un conjunto de instrucciones que la máquina entiende y ejecuta y se basa en tres principios: secuencia, selección e iteracción.</p>
+                <h4>Secuencia</h4>
+                <p>Describe un orden consecutivo a las instrucciones. Se lee la primer instrucción, se ejecuta, se lee la siguiente instrucción que tiene más abajo y repite hasta terminar la ejecución del programa. </p>
+                <h4>Selección</h4>
+                <p>Si se cumple una determinada condición un bloque de código (puede ser una única instrucción) será ejecutado, si no, se saltea este bloque y se continúa la ejecución. </p>
+                <p>Frente a una condición que evalúa verdadero o falso, se ejecuta un bloque determinado de código o no. </p>
+                <h4>Iteración</h4>
+                <p>Iterar refiere a la repetición de un bloque de código un número determinado de veces.</p>
+                <p>Todo bucle tiene una condición que mientras se cumpla, el bloque a iterarse se repetirá de principio a fin. Cuando llega al final preguntará si la condición se sigue cumpliendo, si sí, vuelve a repetir el código completo, si no, dejá de repetir, saltea todo el código iterativo y continúa la ejecución.</p>
+                <p>Notar que es importante alterar los parámetros de la condición de repetición dentro del bloque iterativo para que esta evalúe en falso en algún momento y deje de repetirse el código. Si esto no se hace, tendremos un bucle infinito y en algún momento el programa colapsa.</p>
             </article>
             <article id="stacks" class="subject-item">
                 <h3>Pilas</h3>
-                <p></p>
+                <p>Es un tipo de dato estructurado, esto quiere decir que tiene una estructura que contiene a más de un elemento y sigue un determinado comportamiento.</p>
+                <p>Las pilas constan de un tope, un conjunto de elementos y una base. Siempre el último dato que se agregue, se agrega en el tope y el primer dato que sale es el dato que está en el tope. No se puede conocer los elementos debajo del tope a menos que se desapile este mismo. </p>
+                <h4>Las operaciones asociadas a las pilas son</h4>
+                <ul>
+                    <li>
+                        <h5>VaciaPila(Pila)</h5>
+                        <p>Devuelve un valor de verdad (verdadero o falso) que indica si Pila tiene o no tiene elementos. Si tiene es falso, si no tiene, es verdadero</p>
+                    </li>
+                    <li>
+                        <h5>Tope(Pila)</h5>
+                        <p>Devuelve el elemento que está en el tope de la pila</p>
+                    </li>
+                    <li>
+                        <h5>Apilar(Pila1, elemento)</h5>
+                        <p>Apila elemento en Pila 1</p>
+                    </li>
+                    <li>
+                        <h5>Desapilar(Pila1)</h5>
+                        <p>Elimina un elemento de la Pila1</p>
+                    </li>
+                </ul>
             </article>
             <article id="queues" class="subject-item">
                 <h3>Filas</h3>
+                <p>Las filas es un tipo de dato estructurado que sigue la norma de FIFO (First In- First Out| el primero que entró es el primero en salir).</p>
+                 <h4>Las operaciones asociadas a las pilas son</h4>
+                <ul>
+                    <li>
+                        <h5>VaciaFila(Fila)</h5>
+                        <p>Devuelve un valor de verdad (verdadero o falso) que indica si Fila tiene o no tiene elementos. Si tiene es falso, si no tiene, es verdadero</p>
+                    </li>
+                    <li>
+                        <h5>Primero(Fila)</h5>
+                        <p>Devuelve el elemento que está al inicio de la fila</p>
+                    </li>
+                    <li>
+                        <h5>Agregar(P¿Fila1, elemento)</h5>
+                        <p>Agrega un elemento al final de Fila 1</p>
+                    </li>
+                    <li>
+                        <h5>Desagregar(Fila1)</h5>
+                        <p>Elimina el primer elemento de la Fila1</p>
+                    </li>
+                </ul>
             </article>
             <article id="variables" class="subject-item">
                 <h3>Variables</h3>
                 <p></p>
+                <ul>
+                    <li><h4>Alcance (Scope) </h4>
+                        <p>Define quienes pueden acceder al valor de esa variable</p>
+                    </li>
+                    <li>
+                        <h4>Tiempo de vida</h4>
+                        <p>Es el tiempo desde que se declara la variable hasta que se libera de la memoria</p>
+                    </li>
+                    <li> <h4>Nombre</h4>
+                        <p>Define bajo qué nombre se puede utilizar a la variable, si no tiene nombre, requiere que otra pueda acceder a su contenido o dirección.</p>
+                    </li>
+                    <li>
+                        <h4>Dirección en memoria</h4>
+                        <p>Toda variable tiene una direccion en memoria asociada</p>
+                    </li>
+                    <li>
+                        <h4>Valor</h4>
+                        <p>Toda variable almacena un valor, puede ser uno asignado por el usuario o uno ya establecido. El programador debe controlar que los valores con los que opere tengan un sentido semántico en su programa. </p>
+                    </li>
+                </ul>
                 <table>
                     <thead>
                         <tr>
@@ -99,28 +169,82 @@
             </article>
             <article id="functions" class="subject-item">
                 <h3>Funciones</h3>
+                <p>Son bloques de código que devuelven un valor y si son invocables permiten la modularización y reutilización del código. </p>
+                <h4>Pasaje de parámetros</h4>
+                <ul>
+                    <li>
+                        <h5>Por copia-valor</h5>
+                        <p>Copia el valor que tenga el parámetro real en el parámetro formal creando una variable local en la función o procedimiento pero el valor del parámetro real no se ve modificado.</p>
+                    </li>
+                    <li>
+                        <h5>Por copia-resultado</h5>
+                        <p>El parámetro real toma el valor del parámetro formal una vez que termina la ejecución de la función invocada.</p>
+                    </li>
+                </ul>
             </article>
             <article id="procedures" class="subject-item">
                 <h3>Procedimientos</h3>
+                <p></p>
+                <h4>Pasaje de parámetros por referencia</h4>
+                <p></p>
             </article>
             <article id="structure-diagram" class="subject-item">
                 <h3>Diagrama de Estructura</h3>
+                <p></p>
+                <h4>Cuplas</h4>
+                <p>
+                    <ul>
+                        <li>Cupla de entrada</li>
+                        <li>Cupla de salida</li>
+                        <li>Cupla de entrada-salida</li>
+                    </ul>
+                </p>
             </article>
             <article id="arrays" class="subject-item">
                 <h3>Arreglos</h3>
+                <p>
+                    Un arreglo es un tipo de dato estructurado. Tiene una dimensión y un tamaño asociado, que determina la cantidad de elementos que puede almacenar. 
+                </p> 
+                <p>Los elementos se almacenan en celdas que tienen asignada una posición. Las posiciones tienen un rango determinado que empieza desde 0 ó 1 (dependiendo el lenguaje) hasta la posición de la máxima cantidad de elementos elegida. Se accede al contenido de cada celda a través de las posiciones válidas del arreglo. Es importante distinguir entre la posición del arreglo y el contenido de la celda. 
+                </p>
+                <h4>Secuencias en arreglos</h4>
+                <p></p>
             </article>
             <article id="shift-algorithms"class="subject-item">
                 <h3>Corrimientos</h3>
+                <p></p>
+                <h4>Corrimiento a izquierda</h4>
+                <p></p>
+                <h4>Corrimiento a derecha</h4>
+                <p></p>
+                <h4>Corrimiento de una secuencia de elementos a derecha</h4>
+                <p></p>
+                <h4>Corrimiento de una secuencia de elementos a izquierda</h4>
+                <p></p>
             </article>
             <article id="sortings-algorithms" class="subject-item">
                 <h3>Ordenamientos</h3>
+                <h4>Burbujeo</h4>
+                <p></p>
+                <h4>Selección</h4>
+                <p></p>
+                <h4>Inserción</h4>
+                <p></p>
             </article>
             <article id="search-algorithms" class="subject-item">
                 <h3>Búsquedas</h3>
+                <h4>Búsqueda lineal</h4>
+                <p>El arreglo puede estar ordenado o desordenado</p>
+                <p>Describe la búsqueda elemento a elemento de un elemento en un arreglo dado desde una posición determinada</p>
+                <p>La búsqueda de un elemento comienza a partir de una posición válida del arreglo hasta encontrarlo o llegar a un límite del arreglo como puede ser irse de rango. Si la búsqueda no encuentra el elemento, se habrán recorrido uno por uno los elementos hasta llegar al final. Si se encontró la ejecución terminará antes de esto.</p>
+                <p>La idea principal es que inicie donde inicie la búsqueda, sin importar si va de derecha a izquierda o de izquierda a derecha, siempre se seguirá uno de esos dos órdenes de búsqueda y se mirará elemento a elemento.</p>
+                <h4>Búsqueda binaria</h4>
+                <p>Para este tipo de búsqueda el arreglo debe estar ordenado.</p>
+                <p>Es un algoritmo que particiona el arreglo por mitades para acelerar la búsqueda de un determinado elemento. Es mucho más eficiente que la búsqueda lineal y la implementación puede ser recursiva o iterativa, si es recursiva sigue los principios de la técnica de diseño de divide y conquista</p>
             </article>
             <article id="matrices" class="subject-item">
                 <h3>Matrices</h3>
-                <p></p>
+                <p>Es un arreglo de arreglos. Podemos visualizar una matriz como un arreglo de arreglos, por tanto, tiene más de una dimensión. La representación más común es una matriz de dos dimensiones que se visualiza como una grilla o tabla, donde tenemos filas y columnas. Para acceder al contenido de la celda debemos indicar una fila y columna válida para la matriz</p>
                 <table>
                     <thead>
                         <tr>
