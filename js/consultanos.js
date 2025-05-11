@@ -1,4 +1,4 @@
-document.getElementById("submit-button").addEventListener("click", verifyCaptcha);
+document.getElementById("formulario").addEventListener("submit", verifyCaptcha);
 let indice; 
 const arr = [ 
             "gato",
