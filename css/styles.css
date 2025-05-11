@@ -3,7 +3,9 @@
     margin: 0;
 
 }
-
+#page-main {
+    height: 100%;
+}
 #navbar-main ul {
     display: flex;
     flex-direction: row;
