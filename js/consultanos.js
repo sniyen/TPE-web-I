@@ -1,4 +1,3 @@
-
 document.getElementById("submit-button").addEventListener("click", verifyCaptcha);
 let indice; 
 const arr = [ 
@@ -39,7 +38,6 @@ function verifyCaptcha(event) {
         console.log("todo ok");
         document.getElementById("captcha-inform").classList.remove("captcha-result-incorrect");
         document.getElementById("captcha-inform").innerHTML="Captcha correcto. Mensaje enviado";
-   
     }
     else {
         document.getElementById("user-reply").value = "";

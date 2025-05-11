@@ -13,8 +13,8 @@
     width: 80%;
 }
 #user-question{
-    max-width: 1000px;
-    max-height: 200px;
+    width: 80%;
+    height: 20vh;
     resize: none;
     overflow-y: scroll;
 }
@@ -24,6 +24,8 @@
     border-radius: 5px;
     padding: 2%;
     background-color:#E9A5F1;
+    color: #7B1A9E;
+    font-weight: bold;
 }
 
 #captcha-container{
@@ -53,3 +55,28 @@
 #captcha {
     font-weight: bolder;
 }
+
+/* breakpoint desktop */
+@media (width >= 765px){
+    #formulario input{
+        width: 40%;
+    }
+    
+    #user-question{
+    width: 40%;
+    height: 30vh;
+    resize: none;
+    overflow-y: scroll;
+    }
+
+    #captcha-container{
+    width: 40%;
+    margin: 2%;
+    padding: 2%;
+    }
+    
+    #captcha-container p, #captcha-container h5{
+    margin: 5px;
+    font-size: medium;
+    }
+} 

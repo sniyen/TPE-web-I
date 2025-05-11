@@ -1,0 +1,21 @@
+Hola juli te aviso lo que fui corrigiendo especifico.
+El max width y height del textarea funcionaba solo poniendo widht y height y no max.
+Lo puse en porcentajes para no andar adivinando rows/column y ademas mantiene la relacion 
+con el resto de los inputs independientemente del tamaño de la pantalla. 
+En alto puse viewport height porque el contenedor padre no tiene altura entonces no funciona el porcentaje.
+
+Tuve que sacar las rows y columns del html pq rompia lo de css, controlamos tamaño solo con css,
+ademas agregue un placeholder. 
+
+Consulta:
+que tan mal esta dejar en consultanos, captcha --> el h5 como h5 y agrandarle el font size?
+si no lo cambio por un <p> y no queda tan rarete. jeje
+
+En el index para las tarjetas puse esto
+.card-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+en desktop funciona bien, quedan los headers centrados y alineados, pero en mobile se rompe, yo supongo
+que es porque el titulo es muy largo y se rompe. Sinceramente no se como solucionarlo por ahora):
