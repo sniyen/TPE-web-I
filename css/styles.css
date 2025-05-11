@@ -73,21 +73,28 @@ a {
 
 /*FOOTER*/
 #page-footer figure{
-    margin: 0;
+    word-wrap: break-word;
+    width: 70%;
 }
 #page-footer img {
-    height: 30px;
+    height: 25px;
 }
 #page-footer {
     bottom: 0;
     position: sticky;
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
 }
 
 #page-footer img, #page-footer figure, #page-footer figcaption, #page-footer a { /*ayudaaaaa*/
     margin: 0;
     padding: 0;
 }
-
+#page-footer a {
+    margin: 1% 0%;
+    font-size: smaller;
+}
 
 
