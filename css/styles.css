@@ -75,7 +75,9 @@ a {
 #page-footer figure{
     margin: 0;
 }
-
+#page-footer img {
+    height: 30px;
+}
 #page-footer {
     bottom: 0;
     position: sticky;
