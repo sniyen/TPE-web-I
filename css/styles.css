@@ -2,9 +2,19 @@
     margin: 0;
     height: 100vh;
 }
-#page-main {
-    height: 100%;
+
+#page-header{
+    position: fixed;
+    width: 100%;
+    top: 0;
 }
+
+#page-main{
+    /* agregamos este padding porque el header al quedar en la capa mas alta de la pagina
+       tapa el contenido del main.*/
+    padding-top: 15vh;
+}
+
 #navbar-main ul {
     display: flex;
     flex-direction: row;
@@ -75,25 +85,40 @@ a {
     word-wrap: break-word;
     width: 70%;
 }
+
 #page-footer img {
     height: 25px;
 }
+
 #page-footer {
-    bottom: 0;
-    position: sticky;
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: end;
+    position: static;
 }
 
-#page-footer img, #page-footer figure, #page-footer figcaption, #page-footer a { /*ayudaaaaa*/
+#page-footer img, #page-footer figure, #page-footer figcaption, #page-footer a { 
     margin: 0;
     padding: 0;
 }
+
 #page-footer a {
     margin: 1% 0%;
     font-size: smaller;
 }
 
+@media (width >= 768px){
+    #navbar-topics ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
 
+    #navbar-main li {
+        margin: 2% 0;
+    }
+    #navbar-topics li {
+        margin: 1% 0;
+    }
+}

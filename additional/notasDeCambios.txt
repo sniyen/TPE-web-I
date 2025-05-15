@@ -22,4 +22,9 @@ En el index para las tarjetas puse esto
 en desktop funciona bien, quedan los headers centrados y alineados, pero en mobile se rompe, yo supongo
 que es porque el titulo es muy largo y se rompe. Sinceramente no se como solucionarlo por ahora):
 
-Respuesta: con word-break también se rompe? 
+Respuesta: con word-break también se rompe?
+
+
+en materias desktop tenemos un aside con los topics(redirigen)
+en materias mobile tenemos un boton desplegable con los mismos topics
+IMPORTANTE el menu de navegacion principal debe tapar (controlar capas)
