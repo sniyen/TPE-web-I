@@ -7,12 +7,14 @@
     position: fixed;
     width: 100%;
     top: 0;
+    font-size: xx-large;
+
 }
 
 #page-main{
     /* agregamos este padding porque el header al quedar en la capa mas alta de la pagina
        tapa el contenido del main.*/
-    padding-top: 15vh;
+    padding-top: 10vh;
 }
 
 #navbar-main ul {
@@ -23,19 +25,27 @@
     margin:0;
     list-style: none;
 }
-
+#navbar-main li {
+    margin: 3%;
+}
 .nav-menu {
     display:none;
     flex-direction: column;
-    justify-content: left;
-    align-items: left;
+    justify-content: center;
     list-style: none; /*le saca los puntitos*/
-    justify-content: space-between;
     margin:0;
+    gap: 10%;
 }
+.nav-menu li {
+    margin-bottom: 5%;
+    border-bottom: 1px solid #58206D;
+    padding: 2%;
+    margin-right: 10% ;
 
+}
 .nav-menu.show   {
     display: flex;
+    height: 100vh;
 }
 
 
@@ -84,6 +94,16 @@ a {
     color: white;
 }
 
+.button{
+    margin-bottom: 5%;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 2%;
+    background-color:#E9A5F1;
+    color: #7B1A9E;
+    font-weight: bold;
+}
+
 /*FOOTER*/
 #page-footer figure{
     word-wrap: break-word;
@@ -117,14 +137,26 @@ a {
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
+        font-size: medium;
+        /* con esta medida nos aseguramos que si el menu queda abierto
+           y cambia de pantalla no quede tapando todo el contenido */
+        height: 7vh;
     }
 
+    .nav-menu li {
+        margin: 1% 0;
+        padding: 0;
+        border: none;
+    }
+
+    #navbar-main{
+        font-size: x-large;
+    }
+    
     #navbar-main li {
         margin: 2% 0;
     }
-    .nav-menu li {
-        margin: 1% 0;
-    }
+
     #page-main{
         /* agregamos este padding porque el header al quedar en la capa mas alta de la pagina
        tapa el contenido del main.*/
@@ -135,4 +167,6 @@ a {
     #open-menu{
         display: none;
     }
+    
+
 }

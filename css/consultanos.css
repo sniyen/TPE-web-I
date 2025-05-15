@@ -18,15 +18,6 @@
     resize: none;
     overflow-y: scroll;
 }
-#submit-button {
-    margin-bottom: 5%;
-    border: 1px solid white;
-    border-radius: 5px;
-    padding: 2%;
-    background-color:#E9A5F1;
-    color: #7B1A9E;
-    font-weight: bold;
-}
 
 #captcha-container{
     box-sizing: border-box;

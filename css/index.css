@@ -16,7 +16,10 @@
     padding: 3%;
     font-size: smaller;
 }
-
+.card-footer{
+    display: flex;
+    justify-content: center;
+}
 .subject-content li {
     border: 1px solid #FFD6F5;
     background-color: #FFD6F5;
@@ -40,6 +43,7 @@
     border: 1px solid black;
     /* las tarjetas crecen iguales, sin esto queda una mas ancha que la otra */
     flex: 1;
+
 }
 
 .card-header h3{
@@ -77,9 +81,9 @@
     }
     
     .subject-content {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-template-rows: 50% 50%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 50% 50%;
     }
 
 }
