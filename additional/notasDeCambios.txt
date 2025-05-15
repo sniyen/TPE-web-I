@@ -28,3 +28,5 @@ Respuesta: con word-break también se rompe?
 en materias desktop tenemos un aside con los topics(redirigen)
 en materias mobile tenemos un boton desplegable con los mismos topics
 IMPORTANTE el menu de navegacion principal debe tapar (controlar capas)
+
+arreglar filas de tarjetas
