@@ -10,7 +10,12 @@
     grid-template-columns: auto auto;
     list-style: none;
     box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    padding: 3px;
 }
+
 .subject-content li {
     border: 1px solid #FFD6F5;
     background-color: #FFD6F5;
@@ -20,7 +25,10 @@
     box-sizing: border-box;
     text-wrap: balance; 
     text-align: center;
+    font-size: smaller;
+    height: 10%;
 }
+
 .card {
     margin: 5%;
     padding: 3% 1%;
@@ -29,8 +37,9 @@
     border-radius: 5px;
     border: 1px solid black;
     /* las tarjetas crecen iguales, sin esto queda una mas ancha que la otra */
-    flex: 1; 
+    flex: 1;
 }
+
 .card-header{
     display: flex;
     align-items: center;
@@ -38,9 +47,18 @@
 }
 
 .card-content{
+    justify-content: center;
+    align-items: center;
+}
+
+.description{
     background-color: #A952CB;
     color: white;
     border-radius: 5px;
+    box-sizing: border-box;
+    height: 150px;
+    align-items: center;
+    justify-content: center;
 }
 
 @media (width >= 768px) { /*Si cumple la condicion esta en compu*/
@@ -51,5 +69,9 @@
     }
     .card {
         margin: 20px;
+    }
+
+    .subject-content li{
+        font-size: larger;
     }
 }
