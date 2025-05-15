@@ -24,16 +24,20 @@
     list-style: none;
 }
 
-#navbar-topics ul {
-    display:flex;
+.nav-menu {
+    display:none;
     flex-direction: column;
     justify-content: left;
     align-items: left;
     list-style: none; /*le saca los puntitos*/
     justify-content: space-between;
     margin:0;
-
 }
+
+.nav-menu.show   {
+    display: flex;
+}
+
 
 .oscuro #navbar-main ul, .oscuro #page-footer {
     background-color: #7B1A9E;
@@ -109,7 +113,7 @@ a {
 }
 
 @media (width >= 768px){
-    #navbar-topics ul {
+    .nav-menu {
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
@@ -118,7 +122,17 @@ a {
     #navbar-main li {
         margin: 2% 0;
     }
-    #navbar-topics li {
+    .nav-menu li {
         margin: 1% 0;
+    }
+    #page-main{
+        /* agregamos este padding porque el header al quedar en la capa mas alta de la pagina
+       tapa el contenido del main.*/
+        padding-top: 20vh;
+    }
+
+    /* en desktop el boton no se ve*/
+    #open-menu{
+        display: none;
     }
 }
