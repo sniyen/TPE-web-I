@@ -7,13 +7,14 @@
 .subject-content {
     display: grid;
     grid-template-rows: auto auto auto;
-    grid-template-columns: auto auto;
+    grid-template-columns: 50% 50%;
     list-style: none;
     box-sizing: border-box;
     justify-content: center;
     align-items: center;
-    height: 150px;
-    padding: 3px;
+    height: 100%;
+    padding: 3%;
+    font-size: smaller;
 }
 
 .subject-content li {
@@ -25,8 +26,9 @@
     box-sizing: border-box;
     text-wrap: balance; 
     text-align: center;
-    font-size: smaller;
-    height: 10%;
+    align-content: center;
+    padding: 5%;
+    height: 80%;
 }
 
 .card {
@@ -40,10 +42,8 @@
     flex: 1;
 }
 
-.card-header{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.card-header h3{
+    text-align: center;
 }
 
 .card-content{
@@ -52,13 +52,14 @@
 }
 
 .description{
+    display: flex;
     background-color: #A952CB;
     color: white;
     border-radius: 5px;
     box-sizing: border-box;
     height: 150px;
     align-items: center;
-    justify-content: center;
+    text-align: center;
 }
 
 @media (width >= 768px) { /*Si cumple la condicion esta en compu*/
@@ -74,4 +75,11 @@
     .subject-content li{
         font-size: larger;
     }
+    
+    .subject-content {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 50% 50%;
+    }
+
 }
