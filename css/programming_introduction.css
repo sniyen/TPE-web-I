@@ -1,6 +1,4 @@
-#page-main{
-    padding: 10%;
-}
+
 td {
     border: 1px solid violet;
     background-color: violet;
@@ -8,4 +6,25 @@ td {
 th {
     background-color: #A952CB;
     color: rgb(255, 222, 255);
+}
+#sidebar{
+}
+#nav-list li{
+    margin: 5%;
+    list-style: none;
+    border-bottom: 1px solid #a933d4;
+    padding: 2%;
+    margin-right: 10% ;
+}
+#course {
+    padding: 5% 10%;
+}
+@media (width >=768px) {
+    #page-main{
+        display: flex;
+    }
+    #nav-list li{
+        margin: 20%;
+        border: none;
+    }
 }
