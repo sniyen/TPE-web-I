@@ -11,6 +11,8 @@ Consulta:
 que tan mal esta dejar en consultanos, captcha --> el h5 como h5 y agrandarle el font size?
 si no lo cambio por un <p> y no queda tan rarete. jeje
 
+respuesta: no sé, habría que preguntar, mientras que no sea más grande que un h4 supongo que está bien. 
+
 En el index para las tarjetas puse esto
 .card-header{
     display: flex;
@@ -19,3 +21,5 @@ En el index para las tarjetas puse esto
 }
 en desktop funciona bien, quedan los headers centrados y alineados, pero en mobile se rompe, yo supongo
 que es porque el titulo es muy largo y se rompe. Sinceramente no se como solucionarlo por ahora):
+
+Respuesta: con word-break también se rompe? 
