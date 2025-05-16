@@ -28,6 +28,7 @@
     border-radius: 12px;
     padding: 30px;
     box-sizing: border-box;
+    color: #5C1476;
 }
 
 @media (width >= 768px) {
