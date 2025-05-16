@@ -132,7 +132,6 @@ function verifyCaptcha(event) {
     event.preventDefault();
     let userReply = document.getElementById("user-reply").value;
     if (arr[indice] === userReply) {
-        console.log("todo ok");
         document.getElementById("captcha-inform").classList.remove("captcha-result-incorrect");
         document.getElementById("captcha-inform").innerHTML="Captcha correcto. Mensaje enviado";
     }
@@ -144,3 +143,30 @@ function verifyCaptcha(event) {
     }
     
 }
+/*
+function verifyNotEmptyInputs(){
+    //esta función sólo verifica que el usuario no ingrese " " en los campos requeridos que no te obligan a escribir un caracter distinto
+    let userQuestionTopic = String(document.getElementById("question-topic").value).trim();
+    let userQuestion  = String(document.getElementById("user-question").value).trim();
+    let passed = false; 
+
+    if (( userQuestionTopic != " ") && (userQuestion != " ")){
+        console.log("Te dejo un espaciecito");  //HACE ESTO EL TRIM SI SON TODOS ESPACIOS. Te deja un espaciecito, no los elimina todos. 
+    } 
+    else {
+        console.log("pasaste");
+        passed = true;
+    }
+    return passed;
+}
+
+function verifyForm(event) {
+    event.preventDefault();
+
+    if (verifyNotEmptyInputs()) {
+        console.log("salio todo biennnnnn");
+    }
+    else {
+        console.log("todo mallllll");
+    }
+}*/
