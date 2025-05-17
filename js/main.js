@@ -1,22 +1,54 @@
+
+setUserThemePreference();
 document.getElementById("switch-light-dark").addEventListener("click", switchDarkMode);
-switchDarkMode();
+
+function setUserThemePreference() {
+    let userPreference = localStorage.getItem("userThemePreference");
+    let icon = document.getElementById("theme-img");
+
+    if (userPreference == null) {
+        //no tiene una preferencia establecida
+        userPreference = "claro";
+    }
+    else {
+        //tiene una preferencia
+        if (userPreference == "claro") {
+            document.getElementById("fondo").classList.add("claro");
+            document.getElementById("fondo").classList.remove("oscuro");
+            icon.src = "../img/lunitauwu.png";
+        }
+        else {
+            document.getElementById("fondo").classList.add("oscuro");
+            document.getElementById("fondo").classList.remove("claro");
+            icon.src = "../img/solcitouwu.png";
+        }
+    }
+
+}
 
 function switchDarkMode(){
-    let check = document.getElementById("switch-light-dark").checked;
+
+    let userPreference = localStorage.getItem("userThemePreference");
     let icon = document.getElementById("theme-img");
-     
-    if(check == true) {
+ 
+
+    if (userPreference == "claro"){
+
         document.getElementById("fondo").classList.add("oscuro");
         document.getElementById("fondo").classList.remove("claro");
         icon.src = "../img/solcitouwu.png";
-        
-        //Añadir a cada elemento su dark mode. Con toggle()
+
+        localStorage.setItem("userThemePreference", "oscuro");
+
     } else {
+
         document.getElementById("fondo").classList.add("claro");
         document.getElementById("fondo").classList.remove("oscuro");
         icon.src = "../img/lunitauwu.png";
-        
-        //Añadir a cada elemento su light mode. Con toggle()
-        //por defecto está en modo claro, porque no está chequeado el checkbox. 
+
+        localStorage.setItem("userThemePreference", "claro");
+
+
     }
+    
 }
