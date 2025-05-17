@@ -200,7 +200,6 @@ a {
 
     .nav-menu li:hover{
         background-color: #C68EFD;
-        border-bottom: 2px solid #58206D;
     }
 
     .logo{
@@ -222,5 +221,7 @@ a {
     #open-menu{
         display: none;
     }
+
+
     
 }
