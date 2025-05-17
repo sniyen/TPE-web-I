@@ -8,9 +8,7 @@
     position: fixed;
     width: 100%;
     top: 0;
-    font-size: xx-large;
     align-items: center;
-
 }
 
 .logo {
@@ -34,35 +32,50 @@
     width: 80%;
 }
 
+#theme-img {
+    height: 4vh; /* un poco mas petit que el logo */
+    width: auto;
+}
+
+/* Aca lo que hago es ocultar la cajita del checkbox
+   SIN quitarle la funcionalidad (como haria un display:none)*/
+#switch-light-dark {
+    /* saca el checkbox del flujo, no ocupa espacio */
+    position: absolute;
+    /* lo hacemos invisible literalmente, reducido a nada */
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
 #navbar-main ul {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     background-color: #C68EFD;
-    padding: 0;
-    margin:0;
     list-style: none;
+    margin:0;
+    padding: 0;
 }
+
 #navbar-main li {
-    margin: 3%;
     justify-content: center;
 }
+
 .nav-menu {
     display:none;
     flex-direction: column;
     justify-content: center;
     list-style: none; /*le saca los puntitos*/
-    margin:0;
     gap: 10%;
+    font-size: xx-large;
     font-weight: bolder;
+    margin: 0;
 }
 
 .nav-menu li {
-    margin-bottom: 5%;
     border-bottom: 1px solid #58206D;
-    padding: 2%;
-    margin-right: 10% ;
 }
 
 .nav-menu.show   {
@@ -176,32 +189,29 @@ a {
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
-        font-size: medium;
-        /* con esta medida nos aseguramos que si el menu queda abierto
-           y cambia de pantalla no quede tapando todo el contenido */
-        height: 7vh;
+        font-size: large;
     }
 
     .nav-menu li {
-        margin: 1% 0;
-        padding: 0;
         border: none;
         align-content: center;
+        padding: 5px;
+    }
+
+    .nav-menu li:hover{
+        background-color: #C68EFD;
+        border-bottom: 2px solid #58206D;
     }
 
     .logo{
         width: auto;
         height: 8vh;
     }
-
-    #navbar-main{
-        font-size: x-large;
+  
+    #navbar-main ul{
+        justify-content: space-around;
     }
     
-    #navbar-main li {
-        margin: 2% 0;
-    }
-
     #page-main{
         /* agregamos este padding porque el header al quedar en la capa mas alta de la pagina
        tapa el contenido del main.*/
