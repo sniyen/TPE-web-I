@@ -1,6 +1,18 @@
-let btn = document.querySelector("#course-menu");
-btn.addEventListener("click", showTopics);
+let courseBtn = document.querySelector("#course-menu");
+let courseList = document.querySelector(".nav-list");
+let courseItems = document.querySelectorAll(".nav-item a");
 
+courseBtn.addEventListener("click", showTopics);
 function showTopics (){
-    document.querySelector(".nav-list").classList.toggle("show");
+    courseList.classList.toggle("show");
 }
+
+    /* https://stackoverflow.com/questions/74859259/mobile-menu-close-on-clicking-menu-item-js */
+    /* a cada elemento de la lista le agrego un evento al cliquear */
+courseItems.forEach(element => {
+    element.addEventListener("click", () => {
+        courseList.classList.remove("show"); 
+    });
+});
+
+/*   */
