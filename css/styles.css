@@ -1,6 +1,8 @@
 #fondo {
     margin: 0;
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* HEADER - navigation bars */
@@ -92,6 +94,7 @@ h1, h2, h3, h4, h5, h6{
     /* agregamos este padding porque el header al quedar en la capa mas alta de la pagina
        tapa el contenido del main.*/
     padding-top: 10vh;
+    flex:1;
 }
 
 a {
@@ -214,14 +217,11 @@ a {
     #page-main{
         /* agregamos este padding porque el header al quedar en la capa mas alta de la pagina
        tapa el contenido del main.*/
-        padding-top: 20vh;
+        padding-top: 10vh;
     }
 
     /* en desktop el boton no se ve*/
     #open-menu{
         display: none;
     }
-
-
-    
 }
