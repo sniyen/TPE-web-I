@@ -15,4 +15,12 @@ courseItems.forEach(element => {
     });
 });
 
-/*   */
+let menuBtn = document.getElementById("open-menu");
+menuBtn.addEventListener("click", showMainMenu);
+
+function showMainMenu() {
+    document.querySelector(".nav-menu").classList.toggle("show");
+    if (document.querySelector(".nav-menu").classList.contains("show")){
+        courseList.classList.remove("show");
+    }
+}
