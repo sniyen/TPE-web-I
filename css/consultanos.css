@@ -48,7 +48,9 @@
 #captcha {
     font-weight: bolder;
 }
-
+.button:hover {
+    box-shadow:  1px 1px 10px whitesmoke;
+}
 /* breakpoint desktop */
 @media (width >= 765px){
     #formulario{
@@ -78,4 +80,8 @@
         margin: 5px;
         font-size: medium;
     }
+    .button {
+        height: 10px;
+    }
+
 } 

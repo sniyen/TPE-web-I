@@ -109,6 +109,8 @@ a {
     background-color:#E9A5F1;
     color: #7B1A9E;
     font-weight: bold;
+    display: flex;
+    align-items: center;
 }
 
 /* Cambios de tema claro - oscuro */

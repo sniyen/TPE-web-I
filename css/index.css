@@ -67,8 +67,8 @@
 }
 
 .claro .card-button{
-    border: 1px solid #2D2134;
-    background-color:#A952CB;
+    border: 1px solid #FFD6F5;
+    background-color:#5C1476;
     color: white;
 }
 
@@ -76,6 +76,10 @@
     border: 1px solid white;
     background-color:#FFD6F5;
     color: #7B1A9E;
+}
+
+.card-button:hover {
+    box-shadow:  1px 1px 10px whitesmoke;
 }
 
 /* Cambios de tema claro oscuro */
