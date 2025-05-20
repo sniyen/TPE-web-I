@@ -16,7 +16,7 @@ function setUserThemePreference() {
         icon.src = "../img/lunitauwu.png";
     }
     else {
-        //tiene una preferencia
+        //tiene una preferencia y es oscuro
         document.getElementById("fondo").classList.add("oscuro");
         document.getElementById("fondo").classList.remove("claro");
         icon.src = "../img/solcitouwu.png";
