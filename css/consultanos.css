@@ -13,12 +13,16 @@
 
 #formulario input{
     width: 80%;   
+    border-radius: 5px;
+    border-color: white;
 }
 #user-question{
     width: 80%;
     height: 20vh;
     resize: none;
     overflow-y: scroll;
+    border-radius: 5px;
+    border: 2px inset white;
 }
 
 #captcha-container{
@@ -32,6 +36,7 @@
     margin: 5%;
     width: 80%;
     color: #7B1A9E;
+    border-radius: 5px;
 }
 
 #captcha-container p, #captcha-container h5{
@@ -50,6 +55,29 @@
 }
 .button:hover {
     box-shadow:  1px 1px 10px whitesmoke;
+}
+button:active {
+    background-color: violet;
+}
+input:focus  {
+    outline: none;
+    border: 3px solid violet;
+    box-shadow: 0 0 4px violet;
+}
+#user-question:focus {
+    outline: none;
+    border: 1px solid violet;
+    box-shadow: 0 0 2px violet; 
+}
+.oscuro input:focus {
+    outline: none;
+    border: 3px solid pink;
+    box-shadow: 0 0 4px pink; 
+}
+.oscuro #user-question:focus {
+    outline: none;
+    border: 1px solid pink;
+    box-shadow: 0 0 5px pink;
 }
 /* breakpoint desktop */
 @media (width >= 765px){

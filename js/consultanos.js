@@ -1,4 +1,4 @@
-document.getElementById("formulario").addEventListener("submit", verifyCaptcha);
+document.getElementById("formulario").addEventListener("submit", verifyCaptcha); //esto se hace así para que salgan los "completa este campo" del formulario si intentas enviar el captcha sin haberlos completado. Con el evento click en el boton directamente no pasaba, capaz se puede igual.  
 let indice; 
 const arr = [ 
             "gato",
@@ -114,14 +114,15 @@ const arr = [
             "mantarraya", 
             "polilla atlas", 
             "clamidosaurio", 
-            ];
+            ]; 
+            
+//#DATO CURIOSO: el clamidosaurio es el reptil en el que se basó uno de los dinosaurios de JURASSIC PARK. 
 captchaGenerator();
 function captchaGenerator (){
 
-    const minIndex = 0;
-    const maxIndex = arr.length - 1;
 
-    indice = Math.floor(Math.random() * (maxIndex - minIndex + 1)) + minIndex;
+    indice = Math.floor(Math.random() * (arr.length)); //genera un numero random con MathRandom que está entre (0,1) lo multiplica por la cantidad de elementos del arreglo y se queda con la parte entera inferior (función piso quiere decir con floor())
+    //y esto te da un número entre cero y arr.length -1. Lo cual es correcto porque son los indices minimo y máximo del arreglo.  
     console.log(indice);
     console.log(arr[indice]);
 
@@ -130,43 +131,18 @@ function captchaGenerator (){
 
 function verifyCaptcha(event) {
     event.preventDefault();
-    let userReply = document.getElementById("user-reply").value;
+    let userReply = document.getElementById("user-reply").value; //consultamos qué escribió el usuario en el input del captcha. 
     if (arr[indice] === userReply) {
+        //ingresó el captcha correcto
         document.getElementById("captcha-inform").classList.remove("captcha-result-incorrect");
         document.getElementById("captcha-inform").innerHTML="Captcha correcto. Mensaje enviado";
     }
     else {
-        document.getElementById("user-reply").value = "";
+        //ingresó un captcha incorrecto
+        document.getElementById("user-reply").value = ""; //esto lo que escribió el usuario en el input previamente. 
         document.getElementById("captcha-inform").innerHTML="Captcha incorrecto. Vuelva a intentarlo";
         document.getElementById("captcha-inform").classList.add("captcha-result-incorrect");
-        captchaGenerator();
+        captchaGenerator(); //generamos un nuevo captcha 
     }
     
 }
-/*
-function verifyNotEmptyInputs(){
-    //esta función sólo verifica que el usuario no ingrese " " en los campos requeridos que no te obligan a escribir un caracter distinto
-    let userQuestionTopic = String(document.getElementById("question-topic").value).trim();
-    let userQuestion  = String(document.getElementById("user-question").value).trim();
-    let passed = false; 
-
-    if (( userQuestionTopic != " ") && (userQuestion != " ")){
-        console.log("Te dejo un espaciecito");  //HACE ESTO EL TRIM SI SON TODOS ESPACIOS. Te deja un espaciecito, no los elimina todos. 
-    } 
-    else {
-        console.log("pasaste");
-        passed = true;
-    }
-    return passed;
-}
-
-function verifyForm(event) {
-    event.preventDefault();
-
-    if (verifyNotEmptyInputs()) {
-        console.log("salio todo biennnnnn");
-    }
-    else {
-        console.log("todo mallllll");
-    }
-}*/

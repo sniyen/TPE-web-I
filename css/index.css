@@ -81,6 +81,9 @@
 .card-button:hover {
     box-shadow:  1px 1px 10px whitesmoke;
 }
+.card-button:active {
+    background-color: violet;
+}
 
 /* Cambios de tema claro oscuro */
 .claro #card-container .card {
