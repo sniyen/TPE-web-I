@@ -349,6 +349,48 @@
                 </table>
             </article>
         </section>
+        <section > 
+            <button id="btn-add-resource">Agregar recurso</button>
+            <dialog id="modal-resource">
+                <form id="resource-form">
+                    <input id="resource-title" type="text" name="title" placeholder="Agregar titulo" required>
+                    <input id="resource-url" type="text" name="url" placeholder="Ingrese la url del recurso" required>
+                    <select id="resource-type" name="type" required>
+                        <option>Vídeo</option>
+                        <option>Documento</option>
+                        <option>Videojuego</option>
+                        <option>Quiz</option>
+                        <option>Código</option>
+                        <option>Bibliografía</option>
+                    </select>
+                    <select id="resource-level" name="level" required>
+                        <option>Básico</option>
+                        <option>Intermedio</option>
+                        <option>Avanzado</option>
+                    </select>
+                    <input id="resource-purpose" type="text" name="purpose" placeholder="Ingrese el objetivo a alcanzar al utilizar el recurso">
+                    <input id="resource-description" type="text" name="description" placeholder="Ingrese la descripción del recurso">
+                    <input id="resource-topic" type="text" name="topic" placeholder="Ingrese el tema que trata el recurso" required>
+                    <button id="btn-add-or-modify-resource"></button>
+                </form>
+            </dialog>
+            <table id="resources-table" data-course="programming-introduction" data-unit="unidad-1"><!--usamos data no corromper el html y con esta informacion reconocer curso y unidad desde javascript-->
+                <thead>
+                    <tr>
+                        <th>Título</th>
+                        <th>Recurso</th>
+                        <th>Tipo</th>
+                        <th>Dificultad</th>
+                        <th>Descripción</th>
+                        <th>Objetivo</th>
+                        <th>Tema</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="body-resources">
+                </tbody>
+            </table>
+        </section>
     </main>
     <footer id="page-footer">
         <a href="https://www.linkedin.com/in/julieta-watts/" target="_blank">
@@ -366,5 +408,6 @@
     </footer>
     <script type="text/javascript" src="../js/main.js"></script>
     <script type="text/javascript" src="../js/course.js"></script>
+    <script type="text/javascript" src="../js/mockapi.js"></script>
 </body>
 </html>
