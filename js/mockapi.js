@@ -4,7 +4,19 @@ function iniciar() {
     const course = document.getElementById("resources-table").dataset.course; //nos traemos el curso del DOM
     const unit = document.getElementById("resources-table").dataset.unit; //nos traemos la unidad del DOM
     const btnForm = document.getElementById("btn-add-or-modify-resource");
-    
+    let page  = 1; 
+    const pageLimit = 10;
+    document.getElementById("btn-before-page").addEventListener("click", (event) => {
+        page--;
+        paginar(event);
+        //hay que ver que no se pueda activar si no hay elementos para una pagina anterior
+
+    })
+    document.getElementById("btn-next-page").addEventListener("click", (event) => {
+        page++;
+        paginar(event);
+        //hay que ver que no se pueda activar si no hay elementos para una siguiente pagina
+    })
 
     let modal = document.getElementById("modal-resource");
     document.getElementById("btn-add-resource").addEventListener("click", () => {
@@ -63,7 +75,7 @@ function iniciar() {
             if (response.status == 201) {
                 console.log("agregado el recurso a la api");
                 //llamar al mostrar tabla
-                mostrarRecursos();
+                paginar(event);
 
             }
         } catch (error) {
@@ -109,7 +121,7 @@ function iniciar() {
                 body: JSON.stringify(newResource)
             });
             if(response.ok){
-                mostrarRecursos();
+                paginar(event);
             }
 
         } catch (error) {
@@ -123,24 +135,59 @@ function iniciar() {
                 method: 'DELETE',
             });
             if(response.ok) {
-                mostrarRecursos();
+                
+                paginar(event);
             }
         }   
         catch(error) {
             console.log(error);
         }
     }
-    async function mostrarRecursos() { //anda
-        console.log("Función mostrarRecursos() se está ejecutando");
+    async function paginar(event){
+
+        //PAGINACION. 
+        let urlWithPage = new URL (urlMaterialComplementario); //se crea una nueva instancia del objeto para no acumular las page y limit en la url. 
+        urlWithPage.searchParams.append('page', page); 
+        urlWithPage.searchParams.append('limit', pageLimit); //muestra 10 recursos
         try {
-            console.log('entre al try de mostrar');
-            let response = await fetch(urlMaterialComplementario); //por defecto el método es GET
+            let response = await fetch(urlWithPage, {
+                method: 'GET',
+                headers: {'content-type':'application/json'},
+            }); //por defecto el método es GET, no sería necesario
             if (response.ok) {
                 console.log(response.status);
             }
             let resources = await response.json();
+            if (resources.length == 0) {
+                console.log(page);
+                const buttonActivated = event.target; //con esto consigo el boton que activó el evento. Lo usamos para saber si es el anterior o el siguiente, y así revertir el incremento o decremento. 
+                if (buttonActivated.id === "btn-before-page") {
+                    page++;
+                    console.log(page);
+                }
+                else {
+                    page--; //se tocó el botón para la página siguiente. Este es un parche feo, pero necesito saber si hay más elementos el la siguiente pagina o si no, y si no lo hay tengo que dejar el valor de page en la pagina actual. 
+                    console.log(page);
+                }
+                console.log('no hay elementos para mostrar');
+                return; //
+            }
+            else {
+                mostrarRecursos(resources);
+            }
+
+        }
+        catch(error) {
+            console.log(error);
+        }
+    }
+
+
+    function mostrarRecursos(resources) { //anda
+
             let bodyTable = document.getElementById("body-resources");
             bodyTable.innerHTML = "";
+        
             for (let resource of resources) {
                 let titleField = document.createElement("td");
                 titleField.innerHTML = resource.title;
@@ -210,9 +257,6 @@ function iniciar() {
                 
                 bodyTable.appendChild(row);
             }
-        } catch (error) {
-            console.log(error);
-        }
     }
-    mostrarRecursos();
+    paginar(event); 
 }
