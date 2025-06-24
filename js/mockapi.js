@@ -6,6 +6,12 @@ function iniciar() {
     const btnForm = document.getElementById("btn-add-or-modify-resource");
     let page  = 1; 
     const pageLimit = 10;
+    document.getElementById("btn-filter").addEventListener("click", (e) => {
+        paginar(e);
+    })
+    //AGREGAR LO DE LIMPIAR FILTROS !!!!!!!!!!!!!!!!!!!!
+
+
     document.getElementById("btn-before-page").addEventListener("click", (event) => {
         page--;
         paginar(event);
@@ -128,7 +134,7 @@ function iniciar() {
             console.log(error);
         }
     }
-    async function borrarFila(itemToDelete) { //anda
+    async function borrarFila(itemToDelete, event) { //anda
         try {
             const urlItem = urlMaterialComplementario + "/" +itemToDelete;
             let response = await fetch(urlItem, {
@@ -149,7 +155,16 @@ function iniciar() {
         let urlWithPage = new URL (urlMaterialComplementario); //se crea una nueva instancia del objeto para no acumular las page y limit en la url. 
         urlWithPage.searchParams.append('page', page); 
         urlWithPage.searchParams.append('limit', pageLimit); //muestra 10 recursos
+        
+        const typeFilter = document.getElementById("type-filter").value;
+        const levelFilter = document.getElementById("level-filter").value; 
+        if (typeFilter != "" || levelFilter != "") {
+            urlWithPage.searchParams.append('type', typeFilter);
+            urlWithPage.searchParams.append('level', levelFilter);
+        }
+
         try {
+
             let response = await fetch(urlWithPage, {
                 method: 'GET',
                 headers: {'content-type':'application/json'},
@@ -164,13 +179,19 @@ function iniciar() {
                 if (buttonActivated.id === "btn-before-page") {
                     page++;
                     console.log(page);
+                    console.log('no hay elementos para mostrar');
+                    return; //
                 }
-                else {
+                else if (buttonActivated.id === "btn-before-page"){
                     page--; //se tocó el botón para la página siguiente. Este es un parche feo, pero necesito saber si hay más elementos el la siguiente pagina o si no, y si no lo hay tengo que dejar el valor de page en la pagina actual. 
                     console.log(page);
+                    console.log('no hay elementos para mostrar');
+                    return; //
+                } else {
+                    //se borró el ultimo elemento
+                    mostrarRecursos(resources);
                 }
-                console.log('no hay elementos para mostrar');
-                return; //
+
             }
             else {
                 mostrarRecursos(resources);
@@ -213,8 +234,8 @@ function iniciar() {
                 let btnDelete = document.createElement("button");
                 btnDelete.innerHTML = "Eliminar";
                 btnDelete.dataset.id = resource.id; //esto se agrega para asociar el boton al id de algo que tiene la api, no es correcto ponerle esto directamente en el id, por eso se usa un data-id que se setea con un dataset.(lo que venga despues del guion). 
-                btnDelete.addEventListener("click", () => {
-                        borrarFila(resource.id); //llamo al borrarFila y le paso el identificador del recurso que quiero borrar. 
+                btnDelete.addEventListener("click", (event) => {
+                        borrarFila(resource.id, event); //llamo al borrarFila y le paso el identificador del recurso que quiero borrar. 
                     }
                 );
 
@@ -250,6 +271,8 @@ function iniciar() {
                 row.appendChild(purposeField);
                 row.appendChild(topicField);
 
+                row.dataset.id = resource.id; //asociamos la fila con el recurso. 
+
                 let actionsField = document.createElement("td");
                 actionsField.appendChild(btnModify);
                 actionsField.appendChild(btnDelete);
@@ -258,5 +281,14 @@ function iniciar() {
                 bodyTable.appendChild(row);
             }
     }
+
+
+    
+
+    function filtrar(event) {
+      
+    }
+
+
     paginar(event); 
 }

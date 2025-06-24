@@ -374,6 +374,25 @@
                     <button id="btn-add-or-modify-resource"></button>
                 </form>
             </dialog>
+
+
+            <section id="filter-section">
+                <select id="type-filter" name="type" required>
+                    <option>Vídeo</option>
+                    <option>Documento</option>
+                    <option>Videojuego</option>
+                    <option>Quiz</option>
+                    <option>Código</option>
+                    <option>Bibliografía</option>
+                </select>
+                <select id="level-filter" name="level" required>
+                    <option>Básico</option>
+                    <option>Intermedio</option>
+                    <option>Avanzado</option>
+                </select>
+                <button id="btn-filter">Filtrar</button>
+            </section>
+            
             <table id="resources-table" data-course="programming-introduction" data-unit="unidad-1"><!--usamos data no corromper el html y con esta informacion reconocer curso y unidad desde javascript-->
                 <thead>
                     <tr>
