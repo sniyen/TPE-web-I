@@ -6,10 +6,18 @@ function iniciar() {
     const btnForm = document.getElementById("btn-add-or-modify-resource");
     let page  = 1; 
     const pageLimit = 10;
+    let modal = document.getElementById("modal-resource");
+
+
     document.getElementById("btn-filter").addEventListener("click", (e) => {
         paginar(e);
     })
     //AGREGAR LO DE LIMPIAR FILTROS !!!!!!!!!!!!!!!!!!!!
+    document.getElementById("btn-clean-filter").addEventListener("click", (e)=> {
+        document.getElementById("type-filter").value ="";
+        document.getElementById("level-filter").value =""; 
+        paginar(e);
+    })
 
 
     document.getElementById("btn-before-page").addEventListener("click", (event) => {
@@ -24,12 +32,14 @@ function iniciar() {
         //hay que ver que no se pueda activar si no hay elementos para una siguiente pagina
     })
 
-    let modal = document.getElementById("modal-resource");
     document.getElementById("btn-add-resource").addEventListener("click", () => {
         modal.show(); //muestra el modal con el formulario. 
         btnForm.innerHTML = "Agregar recurso";
 
     }); 
+    document.getElementById("btn-close-form-popUp").addEventListener("click", () => {
+        modal.close();   
+    })
 
     let form = document.getElementById("resource-form");
     form.addEventListener("submit", (e)  => {

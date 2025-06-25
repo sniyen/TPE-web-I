@@ -350,11 +350,16 @@
             </article>
         </section>
         <section id="dinamic-table"> 
-            <button id="btn-add-resource" class="button-course">Agregar recurso</button>
+            <button id="btn-add-resource">Agregar recurso</button>
             <dialog id="modal-resource">
+                <button id="btn-close-form-popUp">Cerrar</button>
                 <form id="resource-form">
+                    
+                    <label for="resource-title">Título</label>
                     <input id="resource-title" type="text" name="title" placeholder="Agregar titulo" required>
+                    <label for="resource-url">Link al recurso</label>
                     <input id="resource-url" type="text" name="url" placeholder="Ingrese la url del recurso" required>
+                    <label for="resource-type">Tipo</label>
                     <select id="resource-type" name="type" required>
                         <option>Vídeo</option>
                         <option>Documento</option>
@@ -363,13 +368,17 @@
                         <option>Código</option>
                         <option>Bibliografía</option>
                     </select>
+                    <label for="resource-level">Nivel</label>
                     <select id="resource-level" name="level" required>
                         <option>Básico</option>
                         <option>Intermedio</option>
                         <option>Avanzado</option>
                     </select>
+                    <label for="resource-purpose">Objetivo</label>
                     <input id="resource-purpose" type="text" name="purpose" placeholder="Ingrese el objetivo a alcanzar al utilizar el recurso">
+                    <label for="resource-description">Descripción</label>
                     <input id="resource-description" type="text" name="description" placeholder="Ingrese la descripción del recurso">
+                    <label for="resource-topic">Tema</label>
                     <input id="resource-topic" type="text" name="topic" placeholder="Ingrese el tema que trata el recurso" required>
                     <button id="btn-add-or-modify-resource"></button>
                 </form>
@@ -377,7 +386,7 @@
 
 
             <section id="filter-section">
-                <select id="type-filter" name="type" class="button-course" required>
+                <select id="type-filter" name="type"  required>
                     <option>video</option>
                     <option>documento</option>
                     <option>juego</option>
@@ -385,12 +394,13 @@
                     <option>codigo</option>
                     <option>bibliografia</option>
                 </select>
-                <select id="level-filter" name="level" class="button-course" required>
+                <select id="level-filter" name="level"  required>
                     <option>basico</option>
                     <option>intermedio</option>
                     <option>avanzado</option>
                 </select>
-                <button id="btn-filter" class="button-course">Filtrar</button>
+                <button id="btn-clean-filter" >Limpiar filtros</button>
+                <button id="btn-filter" >Filtrar</button>
             </section>
             
             <table id="resources-table" data-course="programming-introduction" data-unit="unidad-1"><!--usamos data no corromper el html y con esta informacion reconocer curso y unidad desde javascript-->
@@ -409,8 +419,8 @@
                 <tbody id="body-resources">
                 </tbody>
             </table>
-            <button id="btn-before-page" class="button-course">Anterior</button>
-            <button id="btn-next-page" class="button-course">Siguiente</button>
+            <button id="btn-before-page">Anterior</button>
+            <button id="btn-next-page">Siguiente</button>
         </section>
     </main>
     <footer id="page-footer">
