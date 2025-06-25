@@ -84,6 +84,7 @@ th {
 }
 #modal-resource {
     width: 50%;
+    z-index: 0;
 }
 #modal-resource form{
     display: flex;

@@ -34,7 +34,7 @@ function iniciar() {
     })
 
     document.getElementById("btn-add-resource").addEventListener("click", () => {
-        modal.show(); //muestra el modal con el formulario. 
+        modal.showModal(); //muestra el modal con el formulario. ¿por qué showModal y no show(): https://webinista.com/demos/dialog-element-tutorial/index.html (para bloquear el resto de la pagina)
         btnForm.innerHTML = "Agregar recurso";
 
     }); 
@@ -264,7 +264,7 @@ function iniciar() {
                 btnModify.innerHTML = "Editar";
                 btnModify.dataset.id = resource.id; //capaz no es necesario si ya lo tiene el formulario....
                 btnModify.addEventListener("click", () => {
-                    modal.show(); //muestra el modal con el formulario. 
+                    modal.showModal(); //muestra el modal con el formulario. 
 
                     //NECESITO PODER IDENTIFICAR QUE ELEMENTO ES EL QUE ESTOY MODIFICANDO DESDE EL FORMULARIO. 
                     form.dataset.editingItem = resource.id; //esto hace que el form agregue el atributo data-editingItem="{$resource.id}" si no lo tiene o lo actualice si lo tiene. NO va a haber conflicto en los editar porque sólo se activa un formulario a la vez. Y en el agregar este campo no se usa así que no importa si lo tiene o no lo tiene porque hacemos POST y no necesitamos el ID. 
