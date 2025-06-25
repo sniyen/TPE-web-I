@@ -195,7 +195,7 @@ function iniciar() {
                         console.log('no hay elementos para mostrar');
                         return; //
                     }
-                    else if (buttonActivated.id === "btn-before-page"){
+                    else if (buttonActivated.id === "btn-next-page"){
                         page--; //se tocó el botón para la página siguiente. Este es un parche feo, pero necesito saber si hay más elementos el la siguiente pagina o si no, y si no lo hay tengo que dejar el valor de page en la pagina actual. 
                         console.log(page);
                         console.log('no hay elementos para mostrar');
@@ -303,5 +303,5 @@ function iniciar() {
             }
     }
     limpiarFiltros(); //deberían irse los filtros al cargar la pagina... 
-    paginar(event); 
+        paginar(event); 
 }
