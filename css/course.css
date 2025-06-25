@@ -78,9 +78,17 @@ th {
 #filter-section button, #filter-section select {
     border: 1px solid #5C1476;
     border-radius: 5px;
-    width: 25%;
+    width: 15%;
     text-align: center;
     font-weight: bold;
+}
+#modal-resource {
+    width: 50%;
+}
+#modal-resource form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;   
 }
 
 @media (width >=768px) {

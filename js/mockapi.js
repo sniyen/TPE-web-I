@@ -12,13 +12,14 @@ function iniciar() {
     document.getElementById("btn-filter").addEventListener("click", (e) => {
         paginar(e);
     })
-    //AGREGAR LO DE LIMPIAR FILTROS !!!!!!!!!!!!!!!!!!!!
-    document.getElementById("btn-clean-filter").addEventListener("click", (e)=> {
-        document.getElementById("type-filter").value ="";
-        document.getElementById("level-filter").value =""; 
+    document.getElementById("btn-clean-filter").addEventListener("click", function (e) { //deberían irse los filtros al cargar la pagina... 
+        limpiarFiltros();
         paginar(e);
     })
-
+    function limpiarFiltros() {
+        document.getElementById("type-filter").value ="";
+        document.getElementById("level-filter").value =""; 
+    }
 
     document.getElementById("btn-before-page").addEventListener("click", (event) => {
         page--;
@@ -166,6 +167,7 @@ function iniciar() {
         urlWithPage.searchParams.append('page', page); 
         urlWithPage.searchParams.append('limit', pageLimit); //muestra 10 recursos
         
+        //resulta que mockapi al filtrar busca subcadenas del parametro que le pasamos por filtro asi que tuvimos que cambiar videojuego por juego para que no lo tomara cuando buscabamos el tipo video. 
         const typeFilter = document.getElementById("type-filter").value;
         const levelFilter = document.getElementById("level-filter").value; 
         if (typeFilter != "" || levelFilter != "") {
@@ -202,14 +204,19 @@ function iniciar() {
                         //se borró el ultimo elemento
                         mostrarRecursos(resources);
                     }
-
-                }
-                else {
+                } else {
                     mostrarRecursos(resources);
                 }
             } else {
-                console.log("hubo un error");
+                if (response.status == 404) {
+                    mostrarRecursos([]);
+                    console.log("mockapi no encontró elementos que coincidan con el filtro pedido"); //resulta que mockapi es chistosito y te tira error 404 en vez de un arreglo vacio si no hay elementos que coincidan con el filtro. 
+                }
+                else {
+                    console.log("hubo un error ");
+                }
             }
+            
 
         }
         catch(error) {
@@ -295,6 +302,6 @@ function iniciar() {
                 bodyTable.appendChild(row);
             }
     }
-
+    limpiarFiltros(); //deberían irse los filtros al cargar la pagina... 
     paginar(event); 
 }
