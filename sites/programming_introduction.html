@@ -350,7 +350,7 @@
             </article>
         </section>
         <section id="dinamic-table"> 
-            <button id="btn-add-resource">Agregar recurso</button>
+            <button id="btn-add-resource" class="button-course">Agregar recurso</button>
             <dialog id="modal-resource">
                 <form id="resource-form">
                     <input id="resource-title" type="text" name="title" placeholder="Agregar titulo" required>
@@ -377,20 +377,20 @@
 
 
             <section id="filter-section">
-                <select id="type-filter" name="type" required>
-                    <option>Vídeo</option>
-                    <option>Documento</option>
-                    <option>Videojuego</option>
-                    <option>Quiz</option>
-                    <option>Código</option>
-                    <option>Bibliografía</option>
+                <select id="type-filter" name="type" class="button-course" required>
+                    <option>video</option>
+                    <option>documento</option>
+                    <option>juego</option>
+                    <option>quiz</option>
+                    <option>codigo</option>
+                    <option>bibliografia</option>
                 </select>
-                <select id="level-filter" name="level" required>
-                    <option>Básico</option>
-                    <option>Intermedio</option>
-                    <option>Avanzado</option>
+                <select id="level-filter" name="level" class="button-course" required>
+                    <option>basico</option>
+                    <option>intermedio</option>
+                    <option>avanzado</option>
                 </select>
-                <button id="btn-filter">Filtrar</button>
+                <button id="btn-filter" class="button-course">Filtrar</button>
             </section>
             
             <table id="resources-table" data-course="programming-introduction" data-unit="unidad-1"><!--usamos data no corromper el html y con esta informacion reconocer curso y unidad desde javascript-->
@@ -409,8 +409,8 @@
                 <tbody id="body-resources">
                 </tbody>
             </table>
-            <button id="btn-before-page">Anterior</button>
-            <button id="btn-next-page">Siguiente</button>
+            <button id="btn-before-page" class="button-course">Anterior</button>
+            <button id="btn-next-page" class="button-course">Siguiente</button>
         </section>
     </main>
     <footer id="page-footer">

@@ -171,30 +171,34 @@ function iniciar() {
             }); //por defecto el método es GET, no sería necesario
             if (response.ok) {
                 console.log(response.status);
-            }
-            let resources = await response.json();
-            if (resources.length == 0) {
-                console.log(page);
-                const buttonActivated = event.target; //con esto consigo el boton que activó el evento. Lo usamos para saber si es el anterior o el siguiente, y así revertir el incremento o decremento. 
-                if (buttonActivated.id === "btn-before-page") {
-                    page++;
+                    
+                let resources = await response.json();
+                console.log(resources);
+                if (resources.length == 0) {
                     console.log(page);
-                    console.log('no hay elementos para mostrar');
-                    return; //
+                    const buttonActivated = event.target; //con esto consigo el boton que activó el evento. Lo usamos para saber si es el anterior o el siguiente, y así revertir el incremento o decremento. 
+                    if (buttonActivated.id === "btn-before-page") {
+                        page++;
+                        console.log(page);
+                        console.log('no hay elementos para mostrar');
+                        return; //
+                    }
+                    else if (buttonActivated.id === "btn-before-page"){
+                        page--; //se tocó el botón para la página siguiente. Este es un parche feo, pero necesito saber si hay más elementos el la siguiente pagina o si no, y si no lo hay tengo que dejar el valor de page en la pagina actual. 
+                        console.log(page);
+                        console.log('no hay elementos para mostrar');
+                        return; //
+                    } else {
+                        //se borró el ultimo elemento
+                        mostrarRecursos(resources);
+                    }
+
                 }
-                else if (buttonActivated.id === "btn-before-page"){
-                    page--; //se tocó el botón para la página siguiente. Este es un parche feo, pero necesito saber si hay más elementos el la siguiente pagina o si no, y si no lo hay tengo que dejar el valor de page en la pagina actual. 
-                    console.log(page);
-                    console.log('no hay elementos para mostrar');
-                    return; //
-                } else {
-                    //se borró el ultimo elemento
+                else {
                     mostrarRecursos(resources);
                 }
-
-            }
-            else {
-                mostrarRecursos(resources);
+            } else {
+                console.log("hubo un error");
             }
 
         }
@@ -281,14 +285,6 @@ function iniciar() {
                 bodyTable.appendChild(row);
             }
     }
-
-
-    
-
-    function filtrar(event) {
-      
-    }
-
 
     paginar(event); 
 }

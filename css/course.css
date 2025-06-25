@@ -65,12 +65,23 @@ th {
     overflow-x: auto;
     padding-bottom: 7vh;    
 }
-
-/* no hace nada
-#resources-table{
-    max-width: 80%;
+#filter-section {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    width: 70%;
+    height: 50px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
 }
- */
+#filter-section button, #filter-section select {
+    border: 1px solid #5C1476;
+    border-radius: 5px;
+    width: 25%;
+    text-align: center;
+    font-weight: bold;
+}
 
 @media (width >=768px) {
     #page-main{
