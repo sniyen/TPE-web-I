@@ -1,5 +1,8 @@
-document.getElementById("open-menu").addEventListener("click", menuDesplegablePrincipal);
+document.addEventListener("DOMContentLoaded", iniciar);
+function iniciar (){
+    document.getElementById("open-menu").addEventListener("click", menuDesplegablePrincipal);
 
-function menuDesplegablePrincipal() {
-    document.querySelector(".nav-menu").classList.toggle("show");
+    function menuDesplegablePrincipal() {
+        document.querySelector(".nav-menu").classList.toggle("show");
+    }
 }
