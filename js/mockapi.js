@@ -21,16 +21,15 @@ function iniciar() {
         document.getElementById("level-filter").value =""; 
     }
 
-    document.getElementById("btn-before-page").addEventListener("click", (event) => {
-        page--;
-        paginar(event);
-        //hay que ver que no se pueda activar si no hay elementos para una pagina anterior
-
+    document.getElementById("btn-before-page").addEventListener("click", (e) => {
+        if (page > 1 ){ //aseguramos que no se acceda a una pagina invalida
+            page--;
+            paginar(e);
+        }
     })
-    document.getElementById("btn-next-page").addEventListener("click", (event) => {
+    document.getElementById("btn-next-page").addEventListener("click", (e) => {
         page++;
-        paginar(event);
-        //hay que ver que no se pueda activar si no hay elementos para una siguiente pagina
+        paginar(e);
     })
 
     document.getElementById("btn-add-resource").addEventListener("click", () => {
@@ -46,14 +45,14 @@ function iniciar() {
     form.addEventListener("submit", (e)  => {
             e.preventDefault();
             if(btnForm.innerHTML === "Agregar recurso") {
-                agregarRecurso();
+                agregarRecurso(e);
             }
             else {
-                modificarRecurso();
+                modificarRecurso(e);
             }
         }
     );
-    async function agregarRecurso() { //anda
+    async function agregarRecurso(e) { //anda
         //pedir los datos del formulario
         let formData = new FormData(form);
         //traerme los datos del formulario y guardarlos en variables
@@ -92,7 +91,7 @@ function iniciar() {
             if (response.status == 201) {
                 console.log("agregado el recurso a la api");
                 //llamar al mostrar tabla
-                paginar(event);
+                paginar(e);
 
             }
         } catch (error) {
@@ -101,7 +100,7 @@ function iniciar() {
 
 
     }
-    async function modificarRecurso() { //anda
+    async function modificarRecurso(e) { //anda
 
         let formData = new FormData(form);
         //traerme los datos del formulario y guardarlos en variables
@@ -138,14 +137,14 @@ function iniciar() {
                 body: JSON.stringify(newResource)
             });
             if(response.ok){
-                paginar(event);
+                paginar(e);
             }
 
         } catch (error) {
             console.log(error);
         }
     }
-    async function borrarFila(itemToDelete, event) { //anda
+    async function borrarFila(itemToDelete, e) { //anda
         try {
             const urlItem = urlMaterialComplementario + "/" +itemToDelete;
             let response = await fetch(urlItem, {
@@ -153,7 +152,7 @@ function iniciar() {
             });
             if(response.ok) {
                 
-                paginar(event);
+                paginar(e);
             }
         }   
         catch(error) {
@@ -186,16 +185,12 @@ function iniciar() {
                     
                 let resources = await response.json();
                 console.log(resources);
-                if (resources.length == 0) {
+                /* en esta parte nos vemos obligadas a consultar a MockApi si tiene elementos para mostrar dado que la funcion gratis de la
+                aplicacion no da opcion a saber la cantidad de datos subida a la base de datos, por lo que no hay forma de saber si hay siguiente o no.*/
+                if (resources.length == 0) { 
                     console.log(page);
-                    const buttonActivated = event.target; //con esto consigo el boton que activó el evento. Lo usamos para saber si es el anterior o el siguiente, y así revertir el incremento o decremento. 
-                    if (buttonActivated.id === "btn-before-page") {
-                        page++;
-                        console.log(page);
-                        console.log('no hay elementos para mostrar');
-                        return; //
-                    }
-                    else if (buttonActivated.id === "btn-next-page"){
+                    const buttonActivated = event.target; //con esto consigo el boton que activó el evento. Lo usamos para saber si es el siguiente o el btn de borrar recurso, si es el de siguiente y entró acá es porque no tenía recursos para mostrar en la pagina siguiente. Entonces vamos a dejarle en la pagina actual, no mostramos una lista vacia. 
+                    if (buttonActivated.id === "btn-next-page"){
                         page--; //se tocó el botón para la página siguiente. Este es un parche feo, pero necesito saber si hay más elementos el la siguiente pagina o si no, y si no lo hay tengo que dejar el valor de page en la pagina actual. 
                         console.log(page);
                         console.log('no hay elementos para mostrar');
@@ -217,7 +212,6 @@ function iniciar() {
                 }
             }
             
-
         }
         catch(error) {
             console.log(error);
@@ -303,5 +297,5 @@ function iniciar() {
             }
     }
     limpiarFiltros(); //deberían irse los filtros al cargar la pagina... 
-    paginar(event); 
+    paginar(Event); 
 }

@@ -16,7 +16,7 @@ function iniciar (){
             courseList.classList.remove("show"); 
         });
     });
-
+/*
     let menuBtn = document.getElementById("open-menu");
     menuBtn.addEventListener("click", showMainMenu);
 
@@ -25,5 +25,5 @@ function iniciar (){
         if (document.querySelector(".nav-menu").classList.contains("show")){
             courseList.classList.remove("show");
         }
-    }
+    }*/
 }
