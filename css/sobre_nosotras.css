@@ -3,7 +3,7 @@
     height: 200px;
     margin: 2%;
 }
-#page-main, .about-us, .project-description {
+#page-main, .about-us {
     display: flex;
     flex-direction: column;
     align-items: center;
