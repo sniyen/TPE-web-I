@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", start);
 function start(){
+    /* local storage: almacenamiento local del lado del cliente en formato de texto (key-value)
+        esto se puede ver en la consola -> aplication -> local storage */
     let userPreference = localStorage.getItem("userThemePreference");
     setUserThemePreference();
     document.getElementById("switch-light-dark").addEventListener("click", switchDarkMode);

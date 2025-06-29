@@ -121,7 +121,8 @@ function start(){
     //#DATO CURIOSO: el clamidosaurio es el reptil en el que se basó uno de los dinosaurios de JURASSIC PARK. 
     captchaGenerator();
     function captchaGenerator (){
-        index = Math.floor(Math.random() * (arr.length)); //genera un numero random con MathRandom que está entre (0,1) lo multiplica por la cantidad de elementos del arreglo y se queda con la parte entera inferior (función piso quiere decir con floor())
+        index = Math.floor(Math.random() * (arr.length)); //genera un numero random con MathRandom que está entre (0,1) 
+        // lo multiplica por la cantidad de elementos del arreglo y se queda con la parte entera inferior (función piso quiere decir con floor())
         //y esto te da un número entre cero y arr.length -1. Lo cual es correcto porque son los indices minimo y máximo del arreglo.  
         console.log(index);
         console.log(arr[index]);
@@ -130,7 +131,7 @@ function start(){
 
     function verifyCaptcha(event) {
         event.preventDefault();
-        let userReply = document.getElementById("user-reply").value; //consultamos qué escribió el usuario en el input del captcha. 
+        const userReply = document.getElementById("user-reply").value; //consultamos qué escribió el usuario en el input del captcha. 
         if (arr[index] === userReply) {
             //ingresó el captcha correcto
             document.getElementById("captcha-inform").classList.remove("captcha-result-incorrect");
