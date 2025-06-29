@@ -1,6 +1,6 @@
-document.addEventListener("DOMContentLoaded", iniciar);
-function iniciar() {
-    const urlMaterialComplementario = 'https://685325640594059b23d03fe2.mockapi.io/material-complementario'; 
+document.addEventListener("DOMContentLoaded", start);
+function start() {
+    const additionalMaterialUrl = 'https://685325640594059b23d03fe2.mockapi.io/material-complementario'; 
     const course = document.getElementById("resources-table").dataset.course; //nos traemos el curso del DOM
     const unit = document.getElementById("resources-table").dataset.unit; //nos traemos la unidad del DOM
     const btnForm = document.getElementById("btn-add-or-modify-resource");
@@ -9,15 +9,15 @@ function iniciar() {
     let modal = document.getElementById("modal-resource");
 
     document.getElementById("btn-filter").addEventListener("click", (e) => {
-        paginar(e);
+        paginate(e);
     })
 
     document.getElementById("btn-clean-filter").addEventListener("click", function (e) { //deberían irse los filtros al cargar la pagina... 
-        limpiarFiltros();
-        paginar(e);
+        cleanFilters();
+        paginate(e);
     })
 
-    function limpiarFiltros() {
+    function cleanFilters() {
         document.getElementById("type-filter").value ="";
         document.getElementById("level-filter").value =""; 
     }
@@ -25,13 +25,13 @@ function iniciar() {
     document.getElementById("btn-before-page").addEventListener("click", (e) => {
         if (page > 1 ){ //aseguramos que no se acceda a una pagina invalida
             page--;
-            paginar(e);
+            paginate(e);
         }
     })
 
     document.getElementById("btn-next-page").addEventListener("click", (e) => {
         page++;
-        paginar(e);
+        paginate(e);
     })
 
     document.getElementById("btn-add-resource").addEventListener("click", () => {
@@ -48,15 +48,15 @@ function iniciar() {
     form.addEventListener("submit", (e)  => {
             e.preventDefault();
             if(btnForm.innerHTML === "Agregar recurso") {
-                agregarRecurso(e);
+                addResource(e);
             }
             else {
-                modificarRecurso(e);
+                editResource(e);
             }
         }
     );
 
-    async function agregarRecurso(e) { //anda
+    async function addResource(e) { //anda
         //pedir los datos del formulario
         let formData = new FormData(form);
         //traerme los datos del formulario y guardarlos en variables
@@ -85,7 +85,7 @@ function iniciar() {
 
         //tenemos que agregarlo a mockapi con el método POST
         try {
-            let response = await fetch(urlMaterialComplementario, {
+            let response = await fetch(additionalMaterialUrl, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -95,14 +95,14 @@ function iniciar() {
             if (response.status == 201) {
                 console.log("agregado el recurso a la api");
                 //llamar al mostrar tabla
-                paginar(e);
+                paginate(e);
             }
         } catch (error) {
             console.log(error);
         }
     }
    
-    async function modificarRecurso(e) { //anda
+    async function editResource(e) { //anda
         let formData = new FormData(form);
         //traerme los datos del formulario y guardarlos en variables
         const title = formData.get('title');
@@ -127,7 +127,7 @@ function iniciar() {
             "unit": unit
         } //notar que course y unit no los completa el usuario, ya estan dados por la parte del sitio en la que se encuentre el usuario.
         
-        const urlItem = urlMaterialComplementario +"/" + form.dataset.editingItem;
+        const urlItem = additionalMaterialUrl +"/" + form.dataset.editingItem;
         
         try {
             let response = await fetch(urlItem, {
@@ -138,7 +138,7 @@ function iniciar() {
                 body: JSON.stringify(newResource)
             });
             if(response.ok){
-                paginar(e);
+                paginate(e);
             }
 
         } catch (error) {
@@ -146,15 +146,14 @@ function iniciar() {
         }
     }
 
-    async function borrarFila(itemToDelete, e) { //anda
+    async function deleteRow(itemToDelete, e) { //anda
         try {
-            const urlItem = urlMaterialComplementario + "/" +itemToDelete;
+            const urlItem = additionalMaterialUrl + "/" +itemToDelete;
             let response = await fetch(urlItem, {
                 method: 'DELETE',
             });
             if(response.ok) {
-                
-                paginar(e);
+                paginate(e);
             }
         }   
         catch(error) {
@@ -162,9 +161,9 @@ function iniciar() {
         }
     }
 
-    async function paginar(event){
+    async function paginate(event){
         //PAGINACION. 
-        let urlWithPage = new URL (urlMaterialComplementario); //se crea una nueva instancia del objeto para no acumular las page y limit en la url. 
+        let urlWithPage = new URL (additionalMaterialUrl); //se crea una nueva instancia del objeto para no acumular las page y limit en la url. 
         urlWithPage.searchParams.append('page', page); 
         urlWithPage.searchParams.append('limit', pageLimit); //muestra 10 recursos
         
@@ -198,28 +197,27 @@ function iniciar() {
                         return; //
                     } else {
                         //se borró el ultimo elemento
-                        mostrarRecursos(resources);
+                        showResources(resources);
                     }
                 } else {
-                    mostrarRecursos(resources);
+                    showResources(resources);
                 }
             } else {
                 if (response.status == 404) {
-                    mostrarRecursos([]);
+                    showResources([]);
                     console.log("mockapi no encontró elementos que coincidan con el filtro pedido"); //resulta que mockapi es chistosito y te tira error 404 en vez de un arreglo vacio si no hay elementos que coincidan con el filtro. 
                 }
                 else {
                     console.log("hubo un error ");
                 }
-            }
-            
+            }  
         }
         catch(error) {
             console.log(error);
         }
     }
 
-    function mostrarRecursos(resources) { //anda
+    function showResources(resources) { //anda
         let bodyTable = document.getElementById("body-resources");
         bodyTable.innerHTML = "";
     
@@ -249,7 +247,7 @@ function iniciar() {
             btnDelete.innerHTML = "Eliminar";
             btnDelete.dataset.id = resource.id; //esto se agrega para asociar el boton al id de algo que tiene la api, no es correcto ponerle esto directamente en el id, por eso se usa un data-id que se setea con un dataset.(lo que venga despues del guion). 
             btnDelete.addEventListener("click", (event) => {
-                    borrarFila(resource.id, event); //llamo al borrarFila y le paso el identificador del recurso que quiero borrar. 
+                    deleteRow(resource.id, event); //llamo al borrarFila y le paso el identificador del recurso que quiero borrar. 
                 }
             );
 
@@ -295,6 +293,6 @@ function iniciar() {
             bodyTable.appendChild(row);
         }
     }
-    limpiarFiltros(); //deberían irse los filtros al cargar la pagina... 
-    paginar(Event); 
+    cleanFilters(); //deberían irse los filtros al cargar la pagina... 
+    paginate(Event); 
 }

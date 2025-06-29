@@ -1,5 +1,5 @@
-document.addEventListener("DOMContentLoaded", iniciar);
-function iniciar(){
+document.addEventListener("DOMContentLoaded", start);
+function start(){
     let userPreference = localStorage.getItem("userThemePreference");
     setUserThemePreference();
     document.getElementById("switch-light-dark").addEventListener("click", switchDarkMode);
