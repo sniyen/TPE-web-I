@@ -12,13 +12,13 @@ function start(){
             localStorage.setItem("userThemePreference", "claro");
             document.getElementById("fondo").classList.add("claro");
             document.getElementById("fondo").classList.remove("oscuro");
-            icon.src = "../img/lunitauwu.png";
+            icon.src = "../img/moon.png";
         }
         else {
             //tiene una preferencia y es oscuro
             document.getElementById("fondo").classList.add("oscuro");
             document.getElementById("fondo").classList.remove("claro");
-            icon.src = "../img/solcitouwu.png";
+            icon.src = "../img/sun.png";
         }
     }
 
@@ -28,12 +28,12 @@ function start(){
         if (userPreference == "claro"){
             document.getElementById("fondo").classList.add("oscuro");
             document.getElementById("fondo").classList.remove("claro");
-            icon.src = "../img/solcitouwu.png";
+            icon.src = "../img/sun.png";
             localStorage.setItem("userThemePreference", "oscuro");
         } else {
             document.getElementById("fondo").classList.add("claro");
             document.getElementById("fondo").classList.remove("oscuro");
-            icon.src = "../img/lunitauwu.png";
+            icon.src = "../img/moon.png";
             localStorage.setItem("userThemePreference", "claro");
         }
     }

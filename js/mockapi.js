@@ -37,7 +37,6 @@ function start() {
     document.getElementById("btn-add-resource").addEventListener("click", () => {
         modal.showModal(); //muestra el modal con el formulario. ¿por qué showModal y no show(): https://webinista.com/demos/dialog-element-tutorial/index.html (para bloquear el resto de la pagina)
         btnForm.innerHTML = "Agregar recurso";
-
     }); 
 
     document.getElementById("btn-close-form-popUp").addEventListener("click", () => {

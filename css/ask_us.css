@@ -20,14 +20,14 @@
 #user-question{
     width: 80%;
     height: 20vh;
-    resize: none;
+    resize: none; /* evita que el user modifique el tamaño del text area */
     overflow-y: scroll;
     border-radius: 5px;
     border: 2px inset white;
 }
 
 #captcha-container{
-    box-sizing: border-box;
+    box-sizing: border-box; /* fija el tamaño */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -57,17 +57,7 @@
 }
 
 .button:hover{
-    box-shadow:  1px 1px 10px whitesmoke;
-}
-
-button:active{
-    background-color: violet;
-}
-
-input:focus{
-    outline: none;
-    border: 3px solid violet;
-    box-shadow: 0 0 4px violet;
+    box-shadow: 2px 2px 1px rgb(61, 6, 61);
 }
 
 #user-question:focus{
@@ -100,8 +90,6 @@ input:focus{
     #user-question{
         width: 40%;
         height: 30vh;
-        resize: none;
-        overflow-y: scroll;
     }
 
     #captcha-container{

@@ -88,14 +88,14 @@
 
 /* MAIN */
 h1, h2, h3, h4, h5, h6{
-    margin-top: 0;
+    margin: 0;
 }
 
 #page-main{
     /* agregamos este padding porque el header al quedar en la capa mas alta de la pagina
        tapa el contenido del main.*/
     padding-top: 10vh;
-    flex:1;
+    flex:1; /* hace que el main ocupe el 100% de la pantalla */
 }
 
 a{
@@ -113,6 +113,17 @@ a{
     display: flex;
     align-items: center;
 }
+
+button:active{
+    background-color: violet;
+}
+
+input:focus{
+    outline: none;
+    border: 3px solid violet;
+    box-shadow: 0 0 4px violet;
+}
+
 
 /* Cambios de tema claro - oscuro */
 

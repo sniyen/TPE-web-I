@@ -1,5 +1,5 @@
 .profile-photo{
-    border-radius: 50%;
+    border-radius: 50%; /* Este estilo hace que la foto de perfil se vea redonda */ 
     height: 200px;
     margin: 2%;
 }
@@ -9,7 +9,6 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-
 }
 
 #page-main{
@@ -19,10 +18,6 @@
 
 .profile-description h2{
     margin-bottom: 0;
-}
-
-.profile-description p{
-    margin-top: 2%;
 }
 
 .about-us, #project-description{
@@ -68,9 +63,5 @@
 
     #project-description{
         width: 100%;
-    }
-
-    .profile-description p{
-        margin-top: 8px;
     }
 }
