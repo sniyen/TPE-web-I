@@ -1,10 +1,11 @@
-#card-container {
+#card-container{
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
     padding: 2%;
 }
-.subject-content {
+
+.subject-content{
     display: grid;
     grid-template-rows: auto auto auto;
     grid-template-columns: 50% 50%;
@@ -16,11 +17,13 @@
     padding: 3%;
     font-size: smaller;
 }
+
 .card-footer{
     display: flex;
     justify-content: center;
 }
-.subject-content li {
+
+.subject-content li{
     border: 1px solid #FFD6F5;
     background-color: #FFD6F5;
     color: #5C1476;
@@ -34,7 +37,7 @@
     height: 80%;
 }
 
-.card {
+.card{
     margin: 5%;
     padding: 3% 1%;
     border-radius: 5px;
@@ -60,7 +63,7 @@
     text-align: center;
 }
 
-.card-button{
+.card-button{ 
     margin-bottom: 5%;
     border-radius: 5px;
     padding: 2%;
@@ -78,55 +81,55 @@
     color: #7B1A9E;
 }
 
-.card-button:hover {
+.card-button:hover{
     box-shadow:  1px 1px 10px whitesmoke;
 }
-.card-button:active {
+
+.card-button:active{
     background-color: violet;
 }
 
 /* Cambios de tema claro oscuro */
-.claro #card-container .card {
+.claro #card-container .card{
     background-color:#7B1A9E ;
     color: white;
     border: 1px solid black;
 }
 
-.oscuro #card-container .card {
+.oscuro #card-container .card{
     background-color:#E9A5F1 ;
     color: #5C1476;
     border: 1px solid white;
 }
 
-.claro #card-container .description {
+.claro #card-container .description{
     background-color: #A952CB;
     color: white;
  
 }
 
-.oscuro #card-container .description {
+.oscuro #card-container .description{
     background-color: #FFD6F5;
     color: #5C1476;
  
 }
 
-
-
 @media (width >= 768px) { /*Si cumple la condicion esta en compu*/
-    #card-container {
+    #card-container{
         flex-direction: row;
         justify-content: center;
         align-content: center;
     }
-    .card {
+
+    .card{
         margin: 20px;
     }
 
     .subject-content li{
         font-size: larger;
     }
-    
-    .subject-content {
+
+    .subject-content{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 50% 50%;

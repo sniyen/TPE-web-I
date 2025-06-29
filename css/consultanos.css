@@ -1,8 +1,8 @@
-#page-main {
+#page-main{
     text-align: center;
 }
 
-#formulario {
+#formulario{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -16,6 +16,7 @@
     border-radius: 5px;
     border-color: white;
 }
+
 #user-question{
     width: 80%;
     height: 20vh;
@@ -43,45 +44,52 @@
     margin: 2px;
 }
 
-.captcha-result{
+.captcha-result{ 
     color: green ;
 }
-.captcha-result-incorrect {
+
+.captcha-result-incorrect{
     color:red;
 }
 
-#captcha {
+#captcha{
     font-weight: bolder;
 }
-.button:hover {
+
+.button:hover{
     box-shadow:  1px 1px 10px whitesmoke;
 }
-button:active {
+
+button:active{
     background-color: violet;
 }
-input:focus  {
+
+input:focus{
     outline: none;
     border: 3px solid violet;
     box-shadow: 0 0 4px violet;
 }
-#user-question:focus {
+
+#user-question:focus{
     outline: none;
     border: 1px solid violet;
     box-shadow: 0 0 2px violet; 
 }
-.oscuro input:focus {
+
+.oscuro input:focus{
     outline: none;
     border: 3px solid pink;
     box-shadow: 0 0 4px pink; 
 }
-.oscuro #user-question:focus {
+
+.oscuro #user-question:focus{
     outline: none;
     border: 1px solid pink;
     box-shadow: 0 0 5px pink;
 }
 /* breakpoint desktop */
 @media (width >= 765px){
-    #formulario{
+    #formulario {
         gap: 10px;
     }
     
@@ -101,14 +109,17 @@ input:focus  {
         margin: 2%;
         padding: 2%;
     }
-    #page-main h1 {
+
+    #page-main h1{
         margin-top: 5vh;
     }
+
     #captcha-container p, #captcha-container h5{
         margin: 5px;
         font-size: medium;
     }
-    .button {
+
+    .button{
         height: 10px;
     }
 

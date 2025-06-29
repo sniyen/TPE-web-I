@@ -1,4 +1,4 @@
-#fondo {
+#fondo{
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -14,7 +14,7 @@
     z-index: 10;
 }
 
-.logo {
+.logo{
     height: 6vh;
     width: auto;
 }
@@ -31,18 +31,18 @@
     background-color:#E9A5F1;
 }
 
-.menu-button img {
+.menu-button img{
     width: 80%;
 }
 
-#theme-img {
+#theme-img{
     height: 4vh; /* un poco mas petit que el logo */
     width: auto;
 }
 
 /* Aca lo que hago es ocultar la cajita del checkbox
    SIN quitarle la funcionalidad (como haria un display:none)*/
-#switch-light-dark {
+#switch-light-dark{
     /* saca el checkbox del flujo, no ocupa espacio */
     position: absolute;
     /* lo hacemos invisible literalmente, reducido a nada */
@@ -51,7 +51,7 @@
     height: 0;
 }
 
-#navbar-main ul {
+#navbar-main ul{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -62,11 +62,11 @@
     padding: 0;
 }
 
-#navbar-main li {
+#navbar-main li{
     justify-content: center;
 }
 
-.nav-menu {
+.nav-menu{
     display:none;
     flex-direction: column;
     justify-content: center;
@@ -77,11 +77,11 @@
     margin: 0;
 }
 
-.nav-menu li {
+.nav-menu li{
     border-bottom: 1px solid #58206D;
 }
 
-.nav-menu.show   {
+.nav-menu.show{
     display: flex;
     height: 100vh;
 }
@@ -98,7 +98,7 @@ h1, h2, h3, h4, h5, h6{
     flex:1;
 }
 
-a {
+a{
     text-decoration: none; /*le borro el underline*/
 }
 
@@ -116,48 +116,43 @@ a {
 
 /* Cambios de tema claro - oscuro */
 
-.oscuro #navbar-main ul, .oscuro #page-footer {
+.oscuro #navbar-main ul, .oscuro #page-footer{
     background-color: #7B1A9E;
     color: white;
 }
 
-.claro #navbar-main ul, .claro #page-footer {
+.claro #navbar-main ul, .claro #page-footer{
     background-color: #C68EFD;
     color: #5C1476;
 }
 
-.claro #navbar-topics {
+.claro #navbar-topics{
     background-color: #E9A5F1;
     color: #5C1476;
 }
-.oscuro #navbar-topics {
+
+.oscuro #navbar-topics{
     background-color: #A952CB;
 }
 
-.claro #page-main {
+.claro #page-main{
     background-color: #FFD6F5;
     color: #7B1A9E;
 
 }
 
-.oscuro #page-main {
+.oscuro #page-main{
     background-color: #58206D;
     color: white;
 }
 
-.claro a {
+.claro a{
     color:#7B1A9E;
 }
 
-.oscuro a {
+.oscuro a{
     color: white;
 }
-
-/* Aca pongo lo de las cards SUJETO A MODIFICACION
-   para mi deberia ir en index pero no supe como hacer
-   por el tema del body, no se cual tomaria el js o si toma 
-   ambos css */
-
 
 /*FOOTER*/
 #page-footer figure{
@@ -165,11 +160,11 @@ a {
     width: 70%;
 }
 
-#page-footer img {
+#page-footer img{
     height: 25px;
 }
 
-#page-footer {
+#page-footer{
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -177,12 +172,12 @@ a {
     position: static;
 }
 
-#page-footer img, #page-footer figure, #page-footer figcaption, #page-footer a { 
+#page-footer img, #page-footer figure, #page-footer figcaption, #page-footer a{ 
     margin: 0;
     padding: 0;
 }
 
-#page-footer a {
+#page-footer a{
     margin: 1% 0%;
     font-size: smaller;
 }
@@ -191,14 +186,14 @@ a {
 
 @media (width >= 768px){
     
-    .nav-menu {
+    .nav-menu{
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
         font-size: large;
     }
 
-    .nav-menu li {
+    .nav-menu li{
         border: none;
         align-content: center;
         padding: 5px;
@@ -223,7 +218,7 @@ a {
         padding-top: 10vh;
     }
 
-    /* en desktop el boton no se ve*/
+    /* en desktop el boton no se tiene que ver*/
     #open-menu{
         display: none;
     }

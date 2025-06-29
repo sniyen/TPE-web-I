@@ -3,26 +3,29 @@
     height: 200px;
     margin: 2%;
 }
-#page-main, .about-us {
+
+#page-main, .about-us{
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
 
 }
-#page-main {
+
+#page-main{
     padding-left: 5%;
     padding-right: 5%;
 }
 
-.profile-description h2 {
+.profile-description h2{
     margin-bottom: 0;
 }
 
-.profile-description p {
+.profile-description p{
     margin-top: 2%;
 }
-.about-us, #project-description {
+
+.about-us, #project-description{
     background-color: white;
     margin: 40px 0;
     border-radius: 12px;
@@ -31,17 +34,17 @@
     color: #5C1476;
 }
 
-@media (width >= 768px) {
+@media (width >= 768px){
     #page-main {
         padding: 0 20%;
         padding-top: 15vh;
     }
 
-    #page-main h1 {
+    #page-main h1{
         margin-bottom: 0;
     }
 
-    .about-us {
+    .about-us{
         flex-direction: row;
         align-items: center;
         justify-content: center;
@@ -51,21 +54,23 @@
         text-align: left;
     }
 
-    #profile-2 {
+    #profile-2{
         flex-direction: row-reverse;
     }
 
-    .profile-photo {
+    .profile-photo{
         height: 220px;
     }
 
-    .profile-description {
+    .profile-description{
         max-width: 600px;
     }
-    #project-description {
+
+    #project-description{
         width: 100%;
     }
-    .profile-description p {
+
+    .profile-description p{
         margin-top: 8px;
     }
 }

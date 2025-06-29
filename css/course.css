@@ -1,9 +1,10 @@
-td {
+td{
     border: 1px solid violet;
     background-color: violet;
     color: #7B1A9E;
 }
-th {
+
+th{
     background-color: #A952CB;
     color: rgb(255, 222, 255);
 }
@@ -13,10 +14,12 @@ th {
     margin: 0;
     width: 100vw;
     position: fixed;
+    border-radius: 0;
+    justify-content: center;
 }
 
 /* desplaza el scrolleo a la pos deseada */
-.subject-item {
+.subject-item{
     scroll-margin-top: 12vh;
 }
 
@@ -34,6 +37,7 @@ th {
 .nav-list.show{
     display: flex;
     flex-direction: column;
+    padding-top: 10px;
 }
 
 .nav-list li{
@@ -47,12 +51,12 @@ th {
     color: #5C1476;
 }
 
-.oscuro .nav-list, #filter-section {
+.oscuro .nav-list, #filter-section{
     background-color: #A952CB;
     color: white;
 }
 
-#course {
+#course{
     padding: 5% 10%;
 }
 
@@ -65,7 +69,7 @@ th {
     padding-bottom: 7vh;    
 }
 
-button {
+button{
     border: 1px solid #5C1476;
     border-radius: 5px;
     text-align: center;
@@ -76,8 +80,7 @@ button {
     padding: 5px;
 }
 
-
-#filter-section {
+#filter-section{
     display: flex;
     justify-content: space-between;
     height: 50px;
@@ -86,14 +89,14 @@ button {
     border-radius: 5px;
 }
 
-#filter-section button, #filter-section select {
+#filter-section button, #filter-section select{
     width: 20%;
     color: #5C1476;
     background-color:rgb(244, 170, 244);
 
 }
 
-#modal-resource {
+#modal-resource{
     width: 90vh;
     z-index: 0;
     border: 1px solid white;
@@ -108,54 +111,61 @@ button {
     align-items: center;
     
 }
+
 #modal-resource form input, #modal-resource form select{
     width: 80%;   
     border-radius: 5px;
     border: 2px solid rgb(219, 216, 219);
     height: 4vh;
 }
-#modal-resource form button {
+
+#modal-resource form button{
     width: 200px;
     align-self: center;
 }
-select  {
+
+select {
     border-width: 1px;
     border-radius: 5px;
 }
-button:hover {
-    box-shadow:  2px 2px 1px rgb(61, 6, 61);
+
+button:hover{
+    box-shadow: 2px 2px 1px rgb(61, 6, 61);
 }
 
-button:active {
+button:active{
     background-color: violet;
 }
-input:focus {
+
+input:focus{
     outline: none;
     box-shadow: 0 0 10px rgb(221, 175, 221);
 }
-#pagination-section {
+
+#pagination-section{
     margin: 10px;
     display: flex;
     width: 50%;
     justify-content: space-around;
 }
 
-@media (width >=768px) {
+@media (width >=768px){
     button {
         padding: 10px;
     }
+
     #page-main{
         display: flex;
         flex-direction: column;
         padding-top: 7vh;
     }
 
-    td, th {
+    td, th{
         width: 10%;
         padding: 1%;
     }
 
-    table {
+    table{
         width: 100%;
     }
 
@@ -170,7 +180,7 @@ input:focus {
 
     /* https://www.w3schools.com/cssref/css_pr_scroll-margin-top.php 
        lo que encontre para acomodar la posicion en la navegacion*/
-    .subject-item {
+    .subject-item{
         scroll-margin-top: 14vh;
     }
 
@@ -184,17 +194,17 @@ input:focus {
         gap: 3vh;
     }
 
-    .claro .nav-list {
+    .claro .nav-list{
     background-color: transparent;
     color: #5C1476;
     }
 
-    .oscuro .nav-list {
+    .oscuro .nav-list{
         background-color:transparent;
         color: white;
     }
 
-    #course-menu {
+    #course-menu{
         display: none;
     }
 
